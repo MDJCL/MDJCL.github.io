@@ -1,0 +1,81 @@
+@font-face
+{
+	font-family:Oswald;
+	font-style:normal;
+	font-weight:700;
+	src:local('Oswald Bold'), local(Oswald-Bold), url(https://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6aCWcynf_cDxXwCLxiixG1c.ttf) format(truetype);
+}
+
+.rightCaption
+{
+	padding-left:28px;
+	padding-right:5%;
+	text-align:right;
+	width:100%;
+}
+
+
+a:hover>.img-overlay>.project-overlay>.header-top-left
+{
+	color:#337ab7;
+}
+
+.notSelected
+{
+	opacity:.5;
+}
+
+.selected
+{
+	color:#F36900!important;
+}
+
+
+img.lazyLoad
+{
+	opacity:0;
+	transition:opacity .3s ease-in;
+}
+
+@media min-width 768px {
+	.header-top-left
+	{
+		font-size:30px;
+	}
+	
+	#hello
+	{
+		padding-left:0;
+		padding-right:0;
+	}
+}
+
+@media min-width 992px {
+	.header-top-left
+	{
+		font-size:40px;
+	}
+	
+	.hidden-md
+	{
+		display:none;
+	}
+}
+
+@media min-width 1200px {
+	.header-top-left
+	{
+		font-size:48px;
+	}
+	
+	#hello
+	{
+		padding-left:0;
+		padding-right:0;
+	}
+	
+	.hidden-lg
+	{
+		display:none;
+	}
+}
