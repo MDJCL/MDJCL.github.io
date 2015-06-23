@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maryland JCL</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <link inline rel="stylesheet" href="styles/aboveTheFold.css">
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="container-fluid" id="headerContainer" style="background-color:black;color:white;">
+            <div class="row">
+                <div class="col-md-4" id="hello" onclick="toHomeScreen()">
+                    <!-- <span style="display: inline-block; vertical-align: middle; height: ==The height of your box here=="></span>
+                    <span style="display: inline-block; vertical-align: middle;">MD<br>JCL</span> -->
+                    &nbsp;MD
+                    <br>JCL
+                </div>
+                <div class="col-md-8" id="headerRowsContainer">
+                    <div class="row header">
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <!-- toggles collapse for .collapseRowOneOne -->
+                            <a class="overlineContainer clickCollapse" onclick="changeGrid('calendarGrid')" href="#">Calendar</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer clickCollapse" data-target=".collapseRowOneTwo">Activities</a>
+                        </div>
+                        <!--start hidden for responsive row 1 -->
+                        <div class="row hidden-md hidden-lg noDiv">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
+                                <a class="overlineContainer">Certamin</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
+                                <a class="overlineContainer">Spelling Bee</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
+                                <a class="overlineContainer">Museum Days</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
+                                <a class="overlineContainer">upcomING Fun</a>
+                            </div>
+                        </div>
+                        <!--end hidden for responsive row 1 -->
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer clickCollapse" data-target=".collapseRowOneThree">CHAPTERS</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer clickCollapse" data-target=".collapseRowOneFour">the torch</a>
+                        </div>
+                        <!-- start row 2 respnonsivwe -->
+                        <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                                <a class="overlineContainer">Easton</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree lastColumn">
+                                <a class="overlineContainer">Dulaney</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                                <a class="overlineContainer">The Country School</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree lastColumn">
+                                <a class="overlineContainer">Loyola</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                                <a class="overlineContainer">Eleanor Roosevelt</a>
+                            </div>
+                        </div>
+                        <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
+                                <a class="overlineContainer">Month of May</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
+                                <a class="overlineContainer">Month of April</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
+                                <a class="overlineContainer">Month of March</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
+                                <a class="overlineContainer">Past Torches</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- start row 2 respnonsivwe -->
+                    <!--place for row 1 collapse toggle-->
+                    <!--                MAKE SURE COPY THIS EXACT SAME THING ABOVE FOR MOBILE !!!!!!!!!!!!!!!-->
+                    <!--                     <div class="row header collapse collapseRowOneOne">
+                                                                                                                                                                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                                                                                                                                                                                                    <a class="overlineContainer">Testing</a>
+                                                                                                                                                                        </div>
+                    </div> -->
+                    <div class="row header collapse collapseRowOneTwo">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Certamin</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Spelling Bee</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Museum Days</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">UPCOmING Fun</a>
+                        </div>
+                    </div>
+                    <div class="row header collapse collapseRowOneThree">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Easton</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Dulaney</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">The Country School</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Loyola</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Eleanor Roosevelt</a>
+                        </div>
+                    </div>
+                    <div class="row header collapse collapseRowOneFour">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Month of May</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Month of April</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Month of March</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Past Torches</a>
+                        </div>
+                    </div>
+                    <!-- end place for row 1 collapse toggle-->
+                    <div class="row header">
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer overlineContainer clickCollapse" data-target=".collapseRowTwoOne">photo gallery</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer overlineContainer clickCollapse" data-target=".collapseRowTwoTwo">Documents</a>
+                        </div>
+                        <!-- start place for row 3 responsive toggle -->
+                        <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoOne">
+                                <a class="overlineContainer">2015 MDJCL Convention</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoOne lastColumn">
+                                <a class="overlineContainer">MISC</a>
+                            </div>
+                        </div>
+                        <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo">
+                                <a class="overlineContainer">Constitution</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo lastColumn">
+                                <a class="overlineContainer">Song and Creed</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo">
+                                <a class="overlineContainer">Photo release form</a>
+                            </div>
+                        </div>
+                        <!-- end place for row 3 responsive toggle -->
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer overlineContainer clickCollapse" data-target=".collapseRowTwoThree">Officers</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <a class="overlineContainer clickCollapse">SEARCH</a>
+                        </div>
+                        <!-- start place for row 4 responsive toggle -->
+                        <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                                <a class="overlineContainer">Ellie Kilmon</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                                <a class="overlineContainer">EDMUND OBENG</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                                <a class="overlineContainer">ELLA JOSHI</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                                <a class="overlineContainer">KATIE TOTH</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                                <a class="overlineContainer">LIZ CAPUANO</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                                <a class="overlineContainer">Jonah Langlieb</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end place for row 4 responsive toggle -->
+                    <!--                start place for row 2 collapse toggle -->
+                    <div class="row header collapse collapseRowTwoOne">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">2015 MDJCL Convention</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Misc</a>
+                        </div>
+                    </div>
+                    <div class="row header collapse collapseRowTwoTwo">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Consititution</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Song and Creed</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Photo-release Form</a>
+                        </div>
+                    </div>
+                    <div class="row header collapse collapseRowTwoThree">
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Ellie Kilmon</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Edmund Obeng</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Ella Joshi</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Katie Toth</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Liz Capuano</a>
+                        </div>
+                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                            <a class="overlineContainer">Jonah Langlieb</a>
+                        </div>
+                    </div>
+                    <!--end place for row 2 collapse toggle -->
+                    <br>
+                    <!-- <div class="row header"> -->
+                    <!--     <div class="col-md-3 clickCollapse"> -->
+                    <!--         JOIN TODAY -->
+                    <!--     </div> -->
+                    <!--     <div class="col-md-3 clickCollapse"> -->
+                    <!--         CONNECT -->
+                    <!--     </div> -->
+                    <!--     <div class="col-md-3 clickCollapse"> -->
+                    <!--         BLOG -->
+                    <!--     </div> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">
+upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="gridContainer">
+            <div id="homeScreenGrid">
+                <div class="container-fluid no-gutter gridContainer" style="background:white">
+                    <div class="row no-gutter">
+                        <div class="first col-md-8">
+                            <div class="img-overlay">
+                            <!-- should be approximatly 873x580 -->
+                                <img class="img-responsive" alt="Fun with MDJCL" src="images//NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">2015 MDJCL Convention</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Fun with MDJCL" src="images//Laurel-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">Full of laurels</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Fun with MDJCL" src="images//Watch-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">And Speeches</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 first">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="https://placehold.it/300x200">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">tThis is just a test</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="https://placehold.it/300x200">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">This is just a test</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="https://placehold.it/300x200">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">This is just a test</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="https://placehold.it/300x200">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">This is just a test</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="calendarGrid"  style="display:none;">
+                <div class="container-fluid no-gutter gridContainer" style="background:white">
+                    <div class="row no-gutter">
+                        <div class="first col-md-8">
+                            <div class="img-overlay">
+                                <img class="img-responsive" data-src = "images//Exercise-resized.jpg" alt="Fun with MDJCL" src="http://placehold.it/400x400">
+                                <div class="project-overlay">
+                                    <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                                    <h1 class="header-top-left condensed">December 13th:<br>Linganore High School<br><a href="https://www.google.com/maps?daddr=12013+OLD+ANNAPOLIS+RD,+FREDERICK,+MD+21701">12013 Old Annapolis Rd, Frederick, MD 21701</a></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <a href="https://www.google.com/maps?daddr=12013+OLD+ANNAPOLIS+RD,+FREDERICK,+MD+21701">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Map of MDJCL Event" src="http://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=9&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http://dl.dropboxusercontent.com%2Fu%2F24397004%2FTo%2520Share%2FMDJCL.png%7Cshadow:false%7Cdulaney+high+school">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">Directions</h1>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="row">
+                            <a href="" data-featherlight="#about1stEvent">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Fun with MDJCL" src="images//Help-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">About The Event</h1>
+                                    </div>
+                                </div>
+                                                                    <div id="about1stEvent" class="lightbox">
+                                THIS IS A JJUST TEST
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutter">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <a href="https://www.google.com/maps?daddr=5312+Ballenger+Creek+Pike,+Frederck,+MD+21703">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Map of MDJCL Event" src="http://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=9&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http://dl.dropboxusercontent.com%2Fu%2F24397004%2FTo%2520Share%2FMDJCL.png%7Cshadow:false%7CBallenger+Creek+Pike,+Frederck,+MD+21703">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">Directions</h1>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <div class="img-overlay">
+                                    <img class="img-responsive" alt="Fun with MDJCL" src="images//Stand-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">About The Event</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="first col-md-8">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="images//Nervs-resized.jpg">
+                                <div class="project-overlay">
+                                    <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                                    <h1 class="header-top-left condensed">March 7<br>Tuscarora High School<br><a href="https://www.google.com/maps?daddr=5312+Ballenger+Creek+Pike,+Frederck,+MD+21703">5312 Ballenger Creek Pike, Frederck, MD 21703</a></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/featherlight/release/featherlight.min.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/unveil/jquery.unveil.js"></script>
+    <!-- endbower -->
+
+
+    <script src="/scripts/main.js"></script>
+    <script src="/bower_components/Molten-Leading/moltenleading.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>
+ 
+    <script src="/bower_components/jquery-ui/ui/core.js"></script>
+    <script src="/bower_components/jquery-ui/ui/effect.js"></script>
+    <script src="/bower_components/jquery-ui/ui/effect-slide.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
