@@ -276,13 +276,13 @@ padding-right: 0px;*/
 width: 100%
  } 
 
-#calendarGrid, #homeScreenGrid{
+#calendarGrid, #homeScreenGrid, #documentGrid, #photoGrid{
   /*z-index:10;*/
   display:absolute;
   float:left;
   overflow: hidden;
   position:absolute;
-  /*width:100%;*/
+  width:100%;
 }
 
 .condensed{
@@ -327,8 +327,18 @@ a:hover>.img-overlay>.project-overlay>.header-top-left{
 .overlineContainer {
   cursor:pointer;
 }
-
-img.lazyLoad {
-  opacity: 0;
-  transition: opacity .3s ease-in;
+.opacityZero{
+        opacity:0!important
+}
+.opacityOne{
+        opacity:1!important
+}
+.transitionOpacity {
+  /* opacity: 0; */    
+  transition: opacity 5s ease-in;
 } 
+
+#footer{
+  position: absolute;
+  color: green;
+}
