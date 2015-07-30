@@ -6,7 +6,8 @@
     "modernizr": "~2.8.1",
     "featherlight": "latest",
     "jquery-ui": "~1.11.4",
-    "unveil": "~1.3.0"
+    "unveil": "~1.3.0",
+    "molten-leading":"viljamis/Molten-Leading"
   },
   "devDependencies": {
     "chai": "~3.0.0",

@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
     $("img.lazyload").unveil(1000, function() {
         $(this).load(function() {
-            $(this).hide().fadeIn("slow");
+            // $(this).hide().fadeIn("slow");
         });
     });
     var toAdd = "<div class='row no-gutter'>" + $("#test").html() + "</div>";
