@@ -278,7 +278,6 @@ width: 100%
 
 #calendarGrid, #homeScreenGrid, #documentGrid, #photoGrid{
   /*z-index:10;*/
-  display:absolute;
   float:left;
   overflow: hidden;
   position:absolute;

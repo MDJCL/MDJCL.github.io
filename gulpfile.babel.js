@@ -64,12 +64,13 @@ gulp.task('resize', () => {
                 suffix: "-resized"
             }
         },
-        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg}': {
+        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png}': {
             width: 873,
             height: 580,
             rename: {
                 suffix: "-resized"
-            }
+            },
+            withoutEnlargement:false
         },
         '{Chariot.jpg,}': {
             width: 325,
@@ -108,7 +109,7 @@ gulp.task('resize', () => {
 })
 gulp.task('deploy', function() {
     //build needs to be already done
-    return gulp.src("{./dist/**/*,./Docs/**/*}").pipe($.ghPages())
+    return gulp.src("./dist/**/*").pipe($.ghPages())
 });
 gulp.task('spellcheck', function() {
     // throw "didn't work"
@@ -117,10 +118,11 @@ gulp.task('spellcheck', function() {
         .pipe($.spellcheck({
             "stdout": true,
             "mode": "html",
-            "ignore": ["th", "Linganore" , "Ballenger"]
+            "ignore": ["Linganore" , "Ballenger", "th"]
         }))
+// .pipe($.util.log())
         .pipe($.prompt.confirm({
-                 message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/index.html',
+                 message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html',
         default: true
         }))
         // .pipe(gulp.dest('app'));
@@ -134,9 +136,8 @@ gulp.task('images', ['resize'], () => {
         svgoPlugins: [{
             cleanupIDs: false
         }]
-    }))).on('end', function() {
-        $.util.log('Actually done...');
-    }).on('error', function(err) {
+    })))
+    .on('error', function(err) {
         console.log(err);
         this.end();
     })).pipe(gulp.dest('dist/images/resized'));
@@ -144,6 +145,10 @@ gulp.task('images', ['resize'], () => {
 gulp.task('clear', function(done) {
     return $.cache.clearAll(done);
 });
+gulp.task('docs', () => {
+return gulp.src('app/Docs/**/*').pipe(gulp.dest('dist/Docs'))
+})
+
 gulp.task('fonts', () => {
     return gulp.src(require('main-bower-files')({
         filter: '**/*.{eot,svg,ttf,woff,woff2}'
@@ -162,8 +167,7 @@ gulp.task('serve', ['styles', 'fonts', 'images'], () => {
         server: {
             baseDir: ['.tmp', 'app'],
             routes: {
-                '/bower_components': 'bower_components',
-                '/Docs': 'Docs'
+                '/bower_components': 'bower_components'
             }
         }
     });
@@ -218,10 +222,12 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], (cb) => {
     cb("")
 });
 gulp.task('noCritical', (callback) => {
-    runSequence('clean', 'build', 'deploy', callback);
+    // runSequence(['clean', 'spellcheck'], 'docs', 'build',  'deploy', callback);
+    runSequence(['clean', 'spellcheck'], 'docs', 'build',   callback);
 });
 gulp.task('default', function(callback) {
-    runSequence(['clean', 'spellcheck'], 'build', 'critical', 'deploy', callback);
+    // runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical', 'deploy', callback);
+    runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical',  callback);
 });
 gulp.task('copystyles', function() {
     return gulp.src(['dist/styles/main.css']).pipe($.rename({

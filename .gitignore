@@ -4,3 +4,12 @@ dist
 .sass-cache
 bower_components
 test/bower_components
+build/
+
+# https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~

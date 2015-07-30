@@ -1,0 +1,620 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maryland JCL</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/featherlight/release/featherlight.min.css" />
+    <!-- <link rel="stylesheet" href="/bower_components/featherlight/release/featherlight.gallery.min.css" /> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container-fluid" id="headerContainer" style="background-color:black;color:white;">
+        <div class="row">
+            <div class="col-md-4" id="hello" onclick="toHomeScreen()">
+                <!-- <span style="display: inline-block; vertical-align: middle; height: ==The height of your box here=="></span>
+                    <span style="display: inline-block; vertical-align: middle;">MD<br>JCL</span> -->
+                &nbsp;MD
+                <br>JCL
+            </div>
+            <div class="col-md-8" id="headerRowsContainer">
+                <div class="row header">
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <!-- toggles collapse for .collapseRowOneOne -->
+                        <a class="overlineContainer clickCollapse" onclick="changeGrid('calendarGrid')" href="#">Calendar</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer clickCollapse" data-target=".collapseRowOneTwo">Activities</a>
+                    </div>
+                    <!--start hidden for responsive row 1 -->
+                    <div class="row hidden-md hidden-lg noDiv">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
+                            <a class="overlineContainer">Certamen</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
+                            <a class="overlineContainer">Spelling Bee</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
+                            <a class="overlineContainer">Museum Days</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
+                            <a class="overlineContainer">Upcoming Fun</a>
+                        </div>
+                    </div>
+                    <!--end hidden for responsive row 1 -->
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer clickCollapse" data-target=".collapseRowOneThree">CHAPTERS</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer clickCollapse" data-target=".collapseRowOneFour">the torch</a>
+                    </div>
+                    <!-- start row 2 respnonsivwe -->
+                    <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                            <a class="overlineContainer">Easton</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree lastColumn">
+                            <a class="overlineContainer">Dulaney</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                            <a class="overlineContainer">The Country School</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree lastColumn">
+                            <a class="overlineContainer">Loyola</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneThree">
+                            <a class="overlineContainer">Eleanor Roosevelt</a>
+                        </div>
+                    </div>
+                    <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
+                            <a class="overlineContainer">Month of May</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
+                            <a class="overlineContainer">Month of April</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
+                            <a class="overlineContainer">Month of March</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
+                            <a class="overlineContainer">Past Torches</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- start row 2 respnonsivwe -->
+                <!--place for row 1 collapse toggle-->
+                <!--                MAKE SURE COPY THIS EXACT SAME THING ABOVE FOR MOBILE !!!!!!!!!!!!!!!-->
+                <!--                     <div class="row header collapse collapseRowOneOne">
+                                                                                                                                                                        <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                                                                                                                                                                                                    <a class="overlineContainer">Testing</a>
+                                                                                                                                                                        </div>
+                    </div> -->
+                <div class="row header collapse collapseRowOneTwo">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Certamen</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Spelling Bee</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Museum Days</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Upcoming Fun</a>
+                    </div>
+                </div>
+                <div class="row header collapse collapseRowOneThree">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Easton</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Dulaney</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">The Country School</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Loyola</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Eleanor Roosevelt</a>
+                    </div>
+                </div>
+                <div class="row header collapse collapseRowOneFour">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Month of May</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Month of April</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Month of March</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Past Torches</a>
+                    </div>
+                </div>
+                <!-- end place for row 1 collapse toggle-->
+                <div class="row header">
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer overlineContainer clickCollapse" onclick="changeGrid('photoGrid')" data-target=".collapseRowTwoOne">photo gallery</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer overlineContainer clickCollapse" data-target=".collapseRowTwoTwo">Documents</a>
+                    </div>
+                    <!-- start place for row 3 responsive toggle -->
+                    <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoOne">
+                            <a class="overlineContainer">2015 MDJCL Convention</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoOne lastColumn">
+                            <a class="overlineContainer">ET Cetera</a>
+                        </div>
+                    </div>
+                    <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo">
+                            <a class="overlineContainer" onclick="changeGrid('constitGrid')">Constitution</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo">
+                            <a class="overlineContainer" onclick="changeGrid('documentGrid')">Important Documents</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo ">
+                            <a class="overlineContainer" onclick="changeGrid('FAQGrid')">FAQ</a>
+                        </div>
+                        <!-- <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoTwo lastColumn"> -->
+                        <!--     <a class="overlineContainer" onclick="changeGrid('songGrid')">Song and Creed</a> -->
+                        <!-- </div> -->
+                    </div>
+                    <!-- end place for row 3 responsive toggle -->
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer overlineContainer clickCollapse" data-target=".collapseRowTwoThree">Officers</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <a class="overlineContainer clickCollapse">SEARCH</a>
+                    </div>
+                    <!-- start place for row 4 responsive toggle -->
+                    <div class="row hidden-md hidden-lg noDiv oswaldFont">
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                            <a class="overlineContainer">Ellie Kilmon</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                            <a class="overlineContainer">EDMUND OBENG</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                            <a class="overlineContainer">ELLA JOSHI</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                            <a class="overlineContainer">KATIE TOTH</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree">
+                            <a class="overlineContainer">LIZ CAPUANO</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowTwoThree lastColumn">
+                            <a class="overlineContainer">Jonah Langlieb</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end place for row 4 responsive toggle -->
+                <!--                start place for row 2 collapse toggle -->
+                <div class="row header collapse collapseRowTwoOne">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">2015 MDJCL Convention</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">ET Cetera</a>
+                    </div>
+                </div>
+                <div class="row header collapse collapseRowTwoTwo">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer" onclick="changeGrid('constitGrid')">Constitution</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer" onclick="changeGrid('documentGrid')">Important Documents</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer" onclick="changeGrid('FAQGrid')">FAQ</a>
+                    </div>
+                    <!-- <div class="col-md-3 col-lg-3 hidden-xs hidden-sm"> -->
+                    <!--     <a class="overlineContainer" onclick="changeGrid('songGrid')">Song and Creed</a> -->
+                    <!-- </div> -->
+                </div>
+                <div class="row header collapse collapseRowTwoThree">
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Ellie Kilmon</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Edmund Obeng</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Ella Joshi</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Katie Toth</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Liz Capuano</a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                        <a class="overlineContainer">Jonah Langlieb</a>
+                    </div>
+                </div>
+                <!--end place for row 2 collapse toggle -->
+                <br>
+                <!-- <div class="row header"> -->
+                <!--     <div class="col-md-3 clickCollapse"> -->
+                <!--         JOIN TODAY -->
+                <!--     </div> -->
+                <!--     <div class="col-md-3 clickCollapse"> -->
+                <!--         CONNECT -->
+                <!--     </div> -->
+                <!--     <div class="col-md-3 clickCollapse"> -->
+                <!--         BLOG -->
+                <!--     </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">
+upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="gridContainer">
+        <div id="homeScreenGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row no-gutter">
+                    <div class="first col-md-8">
+                        <div class="img-overlay">
+                            <!-- should be approximatly 873x580 -->
+                            <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">2015 MDJCL Convention</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Laurel-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">Full of laurels</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="img-overlay">
+                                <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Watch-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">And Speeches</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 first">
+                        <div class="img-overlay">
+                            <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Chariot-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">This is just a test</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="img-overlay">
+                            <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Chariot-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">This is just a test</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="img-overlay">
+                            <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Chariot-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">This is just a test</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="img-overlay">
+                            <img class="img-responsive" alt="Fun with MDJCL" src="images/resized/Chariot-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">This is just a test</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="calendarGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row no-gutter">
+                    <div class="first col-md-8">
+                        <div class="img-overlay">
+                            <img class="img-responsive lazyload" data-src="images/resized/Exercise-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg" alt="Fun with MDJCL" data-src="images/resized/NJCL_smaller-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                            <div class="project-overlay">
+                                <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                                <h1 class="header-top-left condensed">December 13th:<br>Linganore High School<br><a href="https://www.google.com/maps?daddr=12013+OLD+ANNAPOLIS+RD,+FREDERICK,+MD+21701">12013 Old Annapolis Rd, Frederick, MD 21701</a></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <a href="https://www.google.com/maps?daddr=12013+OLD+ANNAPOLIS+RD,+FREDERICK,+MD+21701">
+                                <div class="img-overlay">
+                                    <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="http://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=9&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http://dl.dropboxusercontent.com%2Fu%2F24397004%2FTo%2520Share%2FMDJCL.png%7Cshadow:false%7Cdulaney+high+school"
+                                    src="images/resized/NJCL_smaller-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">Directions</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <a href="#" data-featherlight="#about1stEvent">
+                                <div class="img-overlay">
+                                    <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/Help-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">About The Event</h1>
+                                    </div>
+                                </div>
+                                <div id="about1stEvent" class="lightbox">
+                                    THIS IS A JUST TEST
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutter">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <a href="https://www.google.com/maps?daddr=5312+Ballenger+Creek+Pike,+Frederck,+MD+21703">
+                                <div class="img-overlay">
+                                    <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="http://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=9&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http://dl.dropboxusercontent.com%2Fu%2F24397004%2FTo%2520Share%2FMDJCL.png%7Cshadow:false%7CBallenger+Creek+Pike,+Frederck,+MD+21703"
+                                    src="images/resized/NJCL_smaller-resized.jpg">
+                                    <div class="project-overlay">
+                                        <h1 class="header-top-left">Directions</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/Stand-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">About The Event</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="first col-md-8">
+                        <div class="img-overlay">
+                            <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/Nervs-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                            <div class="project-overlay">
+                                <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                                <h1 class="header-top-left condensed">March 7<br>Tuscarora High School<br><a href="https://www.google.com/maps?daddr=5312+Ballenger+Creek+Pike,+Frederck,+MD+21703">5312 Ballenger Creek Pike, Frederck, MD 21703</a></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="documentGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row no-gutter">
+<a href="Docs/MDJCL%20Membership%20%202014-15.doc">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Registration-resized.png" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+                                            Chapter Registration
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                </div>
+                <div class="row no-gutter">
+                    <div class="col-md-6 first">
+                        <a href="Docs/MDJCL_Officer_Candidate_Application_2014.pdf.docx">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/OfficerElection-resized.png" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+                                        Officer Application Form
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="Docs/MDJCL%20Convention%202014%20packet.doc">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/ConventionSchedule-resized.png" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                                    <h1 class="header-top-left condensed">
+                                            MDJCL 2015 Convention Packet
+                                    </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="photoGrid">
+            <div id="photoContainer" class="container-fluid no-gutter gridContainer" style="background:white">
+            </div>
+        </div>
+        <div id="constitGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row no-gutter">
+                    <a href="Docs/MDJCLConstitution.docx.pdf">
+                        <div class="img-overlay">
+                            <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/Constit-resized.png" src="images/resized/NJCL_smaller-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left condensed">
+                                    Constitution
+                                </h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="FAQGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row no-gutter">
+                    <div class="col-md-6 first">
+                        <a href="#" data-featherlight="<p>Certamina are competitions for students of Latin (although being a Latin student is not a prerequisite for entering) interested in testing their knowledge of Latin language and grammar, Roman culture, history, mythology, daily life, literature and geography against students from other schools.<br>Students compete in teams of 1-4 and are sorted by the year of Latin they are in: Latin I, II, III, and Adanced.</p>">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Confusion-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+                                    What is a certamen?
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 first">
+                        <a href="#" data-featherlight="<p>If you have more than four students on one level interested in competing, you have two options. You can split them into multiple teams (there is no limit to the number of teams you can enter -in theory, every student could play alone, although this is discouraged), or you could have up to four students in play while their teammates are benched, and then rotate students between rounds. The only caveat is that students who are not playing may not answer questions or seek to communicate with their teammates.</p>">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Confusion2-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+What if there are more than four students on my team?
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 first">
+                        <a href="#" data-featherlight="<p>Every certamen consists of four rounds per level. Each round is between two or three schools and consists of fifteen questions and their bonuses. The reader will read the toss-up (initial) question. As soon as any student thinks they know the answer, they are to slap in. The scorekeeper will determine which student slapped in first -if there is a tie between schools, paper and pencil will be brought in. Students may not confer with their teammates. If the student who is selected is correct, their team is awarded ten points, and the reader then reads them the bonus question for which they may confer before the team captain gives an answer. If the bonus question is answered correctly, an additional five points are awarded; if not, the team earns only its original 10. If the toss-up is answered incorrectly, no points are deducted, but that team may no longer attempt to answer the question.<br>At the end of each round, the points are totalled, and if there are other teams playing on that level, the teams are rotated so that each plays the maximum number of opponents possible. After all four rounds, first, second and third place trophies are given at each level of competition.</p>">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Confusion3-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+How are the competitions scored?
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 first">
+                        <a href="#" data-featherlight="<p>If there is a tie for first, second or third place between schools after four rounds, then a tie-breaker round is called for those teams. This round generally has an audience of all people attending and consists of 1 question (no bonus). The team who first answers it correctly is deemed victorious</p>">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Confusion2-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+What if the competition ends in a tie?
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 first">
+                        <a href="#" data-featherlight="<p>The schedule of events, address of the school and other useful information can all be found in the state convention packet, conveniently located on our events page. The hotel information is as follows: Comfort Inn @ 410-820-8333 ($109) and/or the Holiday Inn Express @ 410-819-6500 ($139). Be sure to mention the Latin Club Convention or the MDJCL to make sure you get the MDJCL discount. THIS IS URGENT. DO NOT MAKE YOUR RESERVATIONS AT THE LAST SECOND. FILL OUT AND RETURN ALL FORMS AS QUICKLY AS POSSIBLE. This is the MDJCL's first two-day event, and we want it to flow as smoothly as possible. Thank you for your cooperation. </p>">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" data-src="images/resized/Confusion-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left condensed">
+What information do I need for this year's state convention?
+                                </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- <script> -->
+    <!--     (function(b, o, i, l, e, r) { -->
+    <!--         b.GoogleAnalyticsObject = l; -->
+    <!--         b[l] || (b[l] = -->
+    <!--             function() { -->
+    <!--                 (b[l].q = b[l].q || []).push(arguments) -->
+    <!--             }); -->
+    <!--         b[l].l = +new Date; -->
+    <!--         e = o.createElement(i); -->
+    <!--         r = o.getElementsByTagName(i)[0]; -->
+    <!--         e.src = 'https://www.google-analytics.com/analytics.js'; -->
+    <!--         r.parentNode.insertBefore(e, r) -->
+    <!--     }(window, document, 'script', 'ga')); -->
+    <!--     ga('create', 'UA-XXXXX-X'); -->
+    <!--     ga('send', 'pageview'); -->
+    <!-- </script> -->
+
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <!-- <script src="/bower_components/modernizr/modernizr.js"></script> -->
+    <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/featherlight/release/featherlight.min.js"></script>
+    <!-- <script src="/bower_components/featherlight/release/featherlight.gallery.min.js"></script> -->
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/unveil/jquery.unveil.js"></script>
+    <!-- endbower -->
+
+
+    <script src="/scripts/main.js"></script>
+    <script src="/bower_components/Molten-Leading/moltenleading.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <!--    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>-->
+
+    <script src="/bower_components/jquery-ui/ui/core.js"></script>
+    <script src="/bower_components/jquery-ui/ui/effect.js"></script>
+    <script src="/bower_components/jquery-ui/ui/effect-slide.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
