@@ -5,6 +5,7 @@ dist
 bower_components
 test/bower_components
 build/
+app/images/resized
 
 # https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 [._]*.s[a-w][a-z]
