@@ -20,11 +20,13 @@ gulp.task('styles', () => {
 });
 
 function lint(files) {
+// console.log("if want to run eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
     return () => {
         return gulp.src(files).pipe(reload({
             stream: true,
             once: true
-        })).pipe($.eslint()).pipe($.eslint.format()).pipe($.if(!browserSync.active, $.eslint.failAfterError()));
+        })).pipe($.eslint()).pipe($.eslint.format()).pipe($.if(!browserSync.active, $.eslint.failAfterError()))
+
     };
 }
 gulp.task('lint', lint('app/scripts/**/*.js'));
@@ -43,8 +45,10 @@ gulp.task('html', ['styles'], () => {
 gulp.task('resizeGallery', () => {
     return gulp.src('app/images/miscGallery/*').pipe($.responsive({
         '*': {
-            width: 434,
-            height: 290,
+            // width: 434,
+            // height: 290,
+            width: 651,
+            height: 435,
             rename: {
                 suffix: "-resized"
             },
@@ -57,22 +61,26 @@ gulp.task('resizeGallery', () => {
 
 gulp.task('resize', () => {
     return gulp.src('app/images/*').pipe($.responsive({
-        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg}': {
+        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg}': {
+            //for 4/12
             width: 430,
             height: 287,
-            rename: {
-                suffix: "-resized"
-            }
-        },
-        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png}': {
-            width: 873,
-            height: 580,
             rename: {
                 suffix: "-resized"
             },
             withoutEnlargement:false
         },
+        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png}': {
+            //for 8/12 sized
+            width: 873,
+            height: 580,
+            rename: {
+                suffix: "-resized"
+            },
+            withoutEnlargement: false
+        },
         '{Chariot.jpg,}': {
+            //for 3/12
             width: 325,
             height: 433,
             rename: {
@@ -80,6 +88,7 @@ gulp.task('resize', () => {
             }
         },
         '{OfficerElection.png,ConventionSchedule.png,Vulpes.png}': {
+            //for 6/12
             width: "100%",
             height: 522,
             rename: {
@@ -87,7 +96,8 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        'Confusion*': {
+        '{Confusion*,Jonah.jpg}': {
+            //for stricter 6/12
             width: 654,
             height: 437,
             rename: {
@@ -95,14 +105,13 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg}': {
             width: "100%",
             height: "100%",
             rename: {
                 suffix: "-resized"
             }
         }
-
     }, {
         errorOnUnusedImage: false
     })).pipe(gulp.dest('app/images/resized'))
@@ -118,35 +127,35 @@ gulp.task('spellcheck', function() {
         .pipe($.spellcheck({
             "stdout": true,
             "mode": "html",
-            "ignore": ["Linganore" , "Ballenger", "th"]
+            "ignore": ["Linganore", "Ballenger", "th"]
         }))
-// .pipe($.util.log())
+        // .pipe($.util.log())
         .pipe($.prompt.confirm({
-                 message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html',
-        default: true
+            message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html',
+            default: true
         }))
         // .pipe(gulp.dest('app'));
 });
 gulp.task('images', ['resize'], () => {
     return gulp.src('app/images/resized/**/*').pipe($.if($.if.isFile, $.cache($.imagemin({
-        progressive: true,
-        interlaced: true,
-        // don't remove IDs from SVGs, they are often used
-        // as hooks for embedding and styling
-        svgoPlugins: [{
-            cleanupIDs: false
-        }]
-    })))
-    .on('error', function(err) {
-        console.log(err);
-        this.end();
-    })).pipe(gulp.dest('dist/images/resized'));
+            progressive: true,
+            interlaced: true,
+            // don't remove IDs from SVGs, they are often used
+            // as hooks for embedding and styling
+            svgoPlugins: [{
+                cleanupIDs: false
+            }]
+        })))
+        .on('error', function(err) {
+            console.log(err);
+            this.end();
+        })).pipe(gulp.dest('dist/images/resized'));
 });
 gulp.task('clear', function(done) {
     return $.cache.clearAll(done);
 });
 gulp.task('docs', () => {
-return gulp.src('app/Docs/**/*').pipe(gulp.dest('dist/Docs'))
+    return gulp.src('app/Docs/**/*').pipe(gulp.dest('dist/Docs'))
 })
 
 gulp.task('fonts', () => {
@@ -173,7 +182,7 @@ gulp.task('serve', ['styles', 'fonts', 'images'], () => {
     });
     gulp.watch(['app/*.html', 'app/scripts/**/*.js', '.tmp/fonts/**/*']).on('change', reload);
     //jonah
-    gulp.watch('app/images/*', ['resize']);
+    gulp.watch('app/images/*', ['images']);
     //end jonah
     gulp.watch('app/styles/**/*.css', {
         debounceDelay: 2000
@@ -214,7 +223,7 @@ gulp.task('wiredep', () => {
         ignorePath: /^(\.\.\/)*\.\./
     })).pipe(gulp.dest('app'));
 });
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], (cb) => {
+gulp.task('build', ['html', 'images', 'fonts', 'extras'], (cb) => {
     gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
@@ -223,11 +232,14 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], (cb) => {
 });
 gulp.task('noCritical', (callback) => {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build',  'deploy', callback);
-    runSequence(['clean', 'spellcheck'], 'docs', 'build',   callback);
+    runSequence(['clean', 'spellcheck', 'lint'], 'docs', 'build', callback);
 });
 gulp.task('default', function(callback) {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical', 'deploy', callback);
-    runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical',  callback);
+console.log("gulp deploy")
+console.log("eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
+console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html")
+    runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'critical', callback);
 });
 gulp.task('copystyles', function() {
     return gulp.src(['dist/styles/main.css']).pipe($.rename({

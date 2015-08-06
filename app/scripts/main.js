@@ -1,8 +1,10 @@
 // "use strict";
+// to add grid, add to allGrid with display:none in inline style
 $(document).ready(function() {
     oldGrid = "homeScreenGrid";
     // oldGrid = "documentGrid"
     oldElement = "";
+    allGrid = ["constitGrid", "FAQGrid", "calendarGrid", "photoGrid", "documentGrid", "officerGrid", "songCreedGrid", "contactGrid"];
     //run below
     //     a=1;
     // for i in *.png; do
@@ -16,15 +18,22 @@ $(document).ready(function() {
     $("#calendarGrid").css("display", "none");
     $("#photoGrid").css("display", "none");
     $("#documentGrid").css("display", "none");
-    allImages = ["images/resized/miscGallery/0001-resized.jpg", "images/resized/miscGallery/0001-resized.png", "images/resized/miscGallery/0002-resized.jpg", "images/resized/miscGallery/0002-resized.png", "images/resized/miscGallery/0003-resized.jpg", "images/resized/miscGallery/0003-resized.png", "images/resized/miscGallery/0004-resized.jpg", "images/resized/miscGallery/0004-resized.png", "images/resized/miscGallery/0005-resized.jpg", "images/resized/miscGallery/0005-resized.png", "images/resized/miscGallery/0006-resized.jpg", "images/resized/miscGallery/0007-resized.jpg", "images/resized/miscGallery/0008-resized.jpg", "images/resized/miscGallery/0009-resized.jpg", "images/resized/miscGallery/0010-resized.jpg", "images/resized/miscGallery/0011-resized.jpg", "images/resized/miscGallery/0012-resized.jpg", "images/resized/miscGallery/0013-resized.jpg", "images/resized/miscGallery/0014-resized.jpg", "images/resized/miscGallery/0015-resized.jpg", "images/resized/miscGallery/0016-resized.jpg", "images/resized/miscGallery/0017-resized.jpg", "images/resized/miscGallery/0018-resized.jpg", "images/resized/miscGallery/0019-resized.jpg", "images/resized/miscGallery/0020-resized.jpg", "images/resized/miscGallery/0021-resized.jpg", "images/resized/miscGallery/0022-resized.jpg", "images/resized/miscGallery/0023-resized.jpg", "images/resized/miscGallery/0024-resized.jpg", "images/resized/miscGallery/0025-resized.jpg", "images/resized/miscGallery/0026-resized.jpg", "images/resized/miscGallery/0027-resized.jpg", "images/resized/miscGallery/0028-resized.jpg", "images/resized/miscGallery/0029-resized.jpg", "images/resized/miscGallery/0030-resized.jpg", "images/resized/miscGallery/0031-resized.jpg", "images/resized/miscGallery/0032-resized.jpg", "images/resized/miscGallery/0033-resized.jpg", "images/resized/miscGallery/0034-resized.jpg", "images/resized/miscGallery/0035-resized.jpg", "images/resized/miscGallery/0036-resized.jpg", "images/resized/miscGallery/0037-resized.jpg", "images/resized/miscGallery/0038-resized.jpg", "images/resized/miscGallery/0039-resized.jpg", "images/resized/miscGallery/0040-resized.jpg", "images/resized/miscGallery/0041-resized.jpg", "images/resized/miscGallery/0042-resized.jpg", "images/resized/miscGallery/0043-resized.jpg", "images/resized/miscGallery/0044-resized.jpg", "images/resized/miscGallery/0045-resized.jpg", "images/resized/miscGallery/0046-resized.jpg", "images/resized/miscGallery/0047-resized.jpg", "images/resized/miscGallery/0048-resized.jpg", "images/resized/miscGallery/0049-resized.jpg", "images/resized/miscGallery/0050-resized.jpg", "images/resized/miscGallery/0051-resized.jpg", "images/resized/miscGallery/0052-resized.jpg", "images/resized/miscGallery/0053-resized.jpg", "images/resized/miscGallery/0054-resized.jpg", "images/resized/miscGallery/0055-resized.jpg", "images/resized/miscGallery/0056-resized.jpg", "images/resized/miscGallery/0057-resized.jpg", "images/resized/miscGallery/0058-resized.jpg", "images/resized/miscGallery/0059-resized.jpg", "images/resized/miscGallery/0060-resized.jpg", "images/resized/miscGallery/0061-resized.jpg", "images/resized/miscGallery/0062-resized.jpg", "images/resized/miscGallery/0063-resized.jpg", "images/resized/miscGallery/0064-resized.jpg", "images/resized/miscGallery/0065-resized.jpg", "images/resized/miscGallery/0066-resized.jpg", "images/resized/miscGallery/0067-resized.jpg", "images/resized/miscGallery/0068-resized.jpg", "images/resized/miscGallery/0069-resized.jpg", "images/resized/miscGallery/0070-resized.jpg", "images/resized/miscGallery/0071-resized.jpg", "images/resized/miscGallery/0072-resized.jpg", "images/resized/miscGallery/0073-resized.jpg", "images/resized/miscGallery/0074-resized.jpg", "images/resized/miscGallery/0075-resized.jpg", "images/resized/miscGallery/0076-resized.jpg", "images/resized/miscGallery/0077-resized.jpg", "images/resized/miscGallery/0078-resized.jpg", "images/resized/miscGallery/0079-resized.jpg", "images/resized/miscGallery/0080-resized.jpg", "images/resized/miscGallery/0081-resized.jpg", "images/resized/miscGallery/0082-resized.jpg", "images/resized/miscGallery/0083-resized.jpg", "images/resized/miscGallery/0084-resized.jpg", "images/resized/miscGallery/0085-resized.jpg", "images/resized/miscGallery/0086-resized.jpg", "images/resized/miscGallery/0087-resized.jpg", "images/resized/miscGallery/0088-resized.jpg", "images/resized/miscGallery/0089-resized.jpg", "images/resized/miscGallery/0090-resized.jpg", "images/resized/miscGallery/0091-resized.jpg", "images/resized/miscGallery/0092-resized.jpg", "images/resized/miscGallery/0093-resized.jpg", "images/resized/miscGallery/0094-resized.jpg", "images/resized/miscGallery/0095-resized.jpg", "images/resized/miscGallery/0096-resized.jpg", "images/resized/miscGallery/0097-resized.jpg", "images/resized/miscGallery/0098-resized.jpg", "images/resized/miscGallery/0099-resized.jpg", "images/resized/miscGallery/0100-resized.jpg", "images/resized/miscGallery/0101-resized.jpg", "images/resized/miscGallery/0102-resized.jpg", "images/resized/miscGallery/0103-resized.jpg", "images/resized/miscGallery/0104-resized.jpg", "images/resized/miscGallery/0105-resized.jpg", "images/resized/miscGallery/0106-resized.jpg", "images/resized/miscGallery/0107-resized.jpg", "images/resized/miscGallery/0108-resized.jpg", "images/resized/miscGallery/0109-resized.jpg", "images/resized/miscGallery/0110-resized.jpg", "images/resized/miscGallery/0111-resized.jpg", "images/resized/miscGallery/0112-resized.jpg", "images/resized/miscGallery/0113-resized.jpg", "images/resized/miscGallery/0114-resized.jpg", "images/resized/miscGallery/0115-resized.jpg", "images/resized/miscGallery/0116-resized.jpg", "images/resized/miscGallery/0117-resized.jpg", "images/resized/miscGallery/0118-resized.jpg", "images/resized/miscGallery/0119-resized.jpg", "images/resized/miscGallery/0120-resized.jpg", "images/resized/miscGallery/0121-resized.jpg", "images/resized/miscGallery/0122-resized.jpg", "images/resized/miscGallery/0123-resized.jpg", "images/resized/miscGallery/0124-resized.jpg", "images/resized/miscGallery/0125-resized.jpg", "images/resized/miscGallery/0126-resized.jpg", "images/resized/miscGallery/0127-resized.jpg", "images/resized/miscGallery/0128-resized.jpg", "images/resized/miscGallery/0129-resized.jpg", "images/resized/miscGallery/0130-resized.jpg", "images/resized/miscGallery/0131-resized.jpg", "images/resized/miscGallery/0132-resized.jpg", "images/resized/miscGallery/0133-resized.jpg", "images/resized/miscGallery/0134-resized.jpg", "images/resized/miscGallery/0135-resized.jpg", "images/resized/miscGallery/0136-resized.jpg", "images/resized/miscGallery/0137-resized.jpg", "images/resized/miscGallery/0138-resized.jpg", "images/resized/miscGallery/0139-resized.jpg", "images/resized/miscGallery/0140-resized.jpg", "images/resized/miscGallery/0141-resized.jpg", "images/resized/miscGallery/0142-resized.jpg", "images/resized/miscGallery/0143-resized.jpg", "images/resized/miscGallery/0144-resized.jpg", "images/resized/miscGallery/0145-resized.jpg", "images/resized/miscGallery/0146-resized.jpg", "images/resized/miscGallery/0147-resized.jpg", "images/resized/miscGallery/0148-resized.jpg", "images/resized/miscGallery/0149-resized.jpg", "images/resized/miscGallery/0150-resized.jpg", "images/resized/miscGallery/0151-resized.jpg", "images/resized/miscGallery/0152-resized.jpg", "images/resized/miscGallery/0153-resized.jpg", "images/resized/miscGallery/0154-resized.jpg", "images/resized/miscGallery/0155-resized.jpg", "images/resized/miscGallery/0156-resized.jpg", "images/resized/miscGallery/0157-resized.jpg", "images/resized/miscGallery/0158-resized.jpg", "images/resized/miscGallery/0159-resized.jpg", "images/resized/miscGallery/0160-resized.jpg", "images/resized/miscGallery/0161-resized.jpg", "images/resized/miscGallery/0162-resized.jpg", "images/resized/miscGallery/0163-resized.jpg", "images/resized/miscGallery/0164-resized.jpg", "images/resized/miscGallery/0165-resized.jpg", "images/resized/miscGallery/0166-resized.jpg", "images/resized/miscGallery/0167-resized.jpg", "images/resized/miscGallery/0168-resized.jpg", "images/resized/miscGallery/0169-resized.jpg", "images/resized/miscGallery/0170-resized.jpg", "images/resized/miscGallery/0171-resized.jpg", "images/resized/miscGallery/0172-resized.jpg", "images/resized/miscGallery/0173-resized.jpg", "images/resized/miscGallery/0174-resized.jpg", "images/resized/miscGallery/0175-resized.jpg", "images/resized/miscGallery/0176-resized.jpg", "images/resized/miscGallery/0177-resized.jpg", "images/resized/miscGallery/0178-resized.jpg", "images/resized/miscGallery/0179-resized.jpg", "images/resized/miscGallery/0180-resized.jpg", "images/resized/miscGallery/0181-resized.jpg", "images/resized/miscGallery/0182-resized.jpg", "images/resized/miscGallery/0183-resized.jpg", "images/resized/miscGallery/0184-resized.jpg", "images/resized/miscGallery/0185-resized.jpg", "images/resized/miscGallery/0186-resized.jpg", "images/resized/miscGallery/0187-resized.jpg", "images/resized/miscGallery/0188-resized.jpg", "images/resized/miscGallery/0189-resized.jpg", "images/resized/miscGallery/0190-resized.jpg", "images/resized/miscGallery/0191-resized.jpg", "images/resized/miscGallery/0192-resized.jpg", "images/resized/miscGallery/0193-resized.jpg", "images/resized/miscGallery/0194-resized.jpg", "images/resized/miscGallery/0195-resized.jpg", "images/resized/miscGallery/0196-resized.jpg", "images/resized/miscGallery/0197-resized.jpg", "images/resized/miscGallery/0198-resized.jpg", "images/resized/miscGallery/0199-resized.jpg", "images/resized/miscGallery/0200-resized.jpg", "images/resized/miscGallery/0201-resized.jpg", "images/resized/miscGallery/0202-resized.jpg", "images/resized/miscGallery/0203-resized.jpg", "images/resized/miscGallery/0204-resized.jpg", "images/resized/miscGallery/0205-resized.jpg", "images/resized/miscGallery/0206-resized.jpg", "images/resized/miscGallery/0207-resized.jpg", "images/resized/miscGallery/0208-resized.jpg", "images/resized/miscGallery/0209-resized.jpg", "images/resized/miscGallery/0210-resized.jpg", "images/resized/miscGallery/0211-resized.jpg", "images/resized/miscGallery/0212-resized.jpg", "images/resized/miscGallery/0213-resized.jpg", "images/resized/miscGallery/0214-resized.jpg", "images/resized/miscGallery/0215-resized.jpg", "images/resized/miscGallery/0216-resized.jpg", "images/resized/miscGallery/0217-resized.jpg", "images/resized/miscGallery/0218-resized.jpg", "images/resized/miscGallery/0219-resized.jpg", "images/resized/miscGallery/0220-resized.jpg", "images/resized/miscGallery/0221-resized.jpg", "images/resized/miscGallery/0222-resized.jpg", "images/resized/miscGallery/0223-resized.jpg", "images/resized/miscGallery/0224-resized.jpg", "images/resized/miscGallery/0225-resized.jpg", "images/resized/miscGallery/0226-resized.jpg", "images/resized/miscGallery/0227-resized.jpg", "images/resized/miscGallery/0228-resized.jpg", "images/resized/miscGallery/0229-resized.jpg", "images/resized/miscGallery/0230-resized.jpg", "images/resized/miscGallery/0231-resized.jpg", "images/resized/miscGallery/0232-resized.jpg", "images/resized/miscGallery/0233-resized.jpg", "images/resized/miscGallery/0234-resized.jpg", "images/resized/miscGallery/0235-resized.jpg", "images/resized/miscGallery/0236-resized.jpg", "images/resized/miscGallery/0237-resized.jpg", "images/resized/miscGallery/0238-resized.jpg", "images/resized/miscGallery/0239-resized.jpg", "images/resized/miscGallery/0240-resized.jpg", "images/resized/miscGallery/0241-resized.jpg", "images/resized/miscGallery/0242-resized.jpg", "images/resized/miscGallery/0243-resized.jpg", "images/resized/miscGallery/0244-resized.jpg", "images/resized/miscGallery/0245-resized.jpg", "images/resized/miscGallery/0246-resized.jpg", "images/resized/miscGallery/0247-resized.jpg", "images/resized/miscGallery/0248-resized.jpg", "images/resized/miscGallery/0249-resized.jpg", "images/resized/miscGallery/0250-resized.jpg", "images/resized/miscGallery/0251-resized.jpg", "images/resized/miscGallery/0252-resized.jpg", "images/resized/miscGallery/0253-resized.jpg", "images/resized/miscGallery/0254-resized.jpg", "images/resized/miscGallery/0255-resized.jpg", "images/resized/miscGallery/0256-resized.jpg", "images/resized/miscGallery/0257-resized.jpg", "images/resized/miscGallery/0258-resized.jpg", "images/resized/miscGallery/0259-resized.jpg", "images/resized/miscGallery/0260-resized.jpg", "images/resized/miscGallery/0261-resized.jpg", "images/resized/miscGallery/0262-resized.jpg", "images/resized/miscGallery/0263-resized.jpg", "images/resized/miscGallery/0264-resized.jpg", "images/resized/miscGallery/0265-resized.jpg", "images/resized/miscGallery/0266-resized.jpg", "images/resized/miscGallery/0267-resized.jpg", "images/resized/miscGallery/0268-resized.jpg", "images/resized/miscGallery/0269-resized.jpg", "images/resized/miscGallery/0270-resized.jpg", "images/resized/miscGallery/0271-resized.jpg", "images/resized/miscGallery/0272-resized.jpg", "images/resized/miscGallery/0273-resized.jpg", "images/resized/miscGallery/0274-resized.jpg", "images/resized/miscGallery/0275-resized.jpg", "images/resized/miscGallery/0276-resized.jpg", "images/resized/miscGallery/0277-resized.jpg", "images/resized/miscGallery/0278-resized.jpg", "images/resized/miscGallery/0279-resized.jpg", "images/resized/miscGallery/0280-resized.jpg", "images/resized/miscGallery/0281-resized.jpg", "images/resized/miscGallery/0282-resized.jpg", "images/resized/miscGallery/0283-resized.jpg", "images/resized/miscGallery/0284-resized.jpg", "images/resized/miscGallery/0285-resized.jpg", "images/resized/miscGallery/0286-resized.jpg", "images/resized/miscGallery/0287-resized.jpg", "images/resized/miscGallery/0288-resized.jpg", "images/resized/miscGallery/0289-resized.jpg", "images/resized/miscGallery/0290-resized.jpg", "images/resized/miscGallery/0291-resized.jpg", "images/resized/miscGallery/0292-resized.jpg", "images/resized/miscGallery/0293-resized.jpg", "images/resized/miscGallery/0294-resized.jpg", "images/resized/miscGallery/0295-resized.jpg", "images/resized/miscGallery/0296-resized.jpg", "images/resized/miscGallery/0297-resized.jpg", "images/resized/miscGallery/0298-resized.jpg", "images/resized/miscGallery/0299-resized.jpg", "images/resized/miscGallery/0300-resized.jpg", "images/resized/miscGallery/0301-resized.jpg", "images/resized/miscGallery/0302-resized.jpg", "images/resized/miscGallery/0303-resized.jpg", "images/resized/miscGallery/0304-resized.jpg", "images/resized/miscGallery/0305-resized.jpg", "images/resized/miscGallery/0306-resized.jpg", "images/resized/miscGallery/0307-resized.jpg", "images/resized/miscGallery/0308-resized.jpg", "images/resized/miscGallery/0309-resized.jpg", "images/resized/miscGallery/0310-resized.jpg", "images/resized/miscGallery/0311-resized.jpg", "images/resized/miscGallery/0312-resized.jpg", "images/resized/miscGallery/0313-resized.jpg", "images/resized/miscGallery/0314-resized.jpg", "images/resized/miscGallery/0315-resized.jpg", "images/resized/miscGallery/0316-resized.jpg", "images/resized/miscGallery/0317-resized.jpg", "images/resized/miscGallery/0318-resized.jpg", "images/resized/miscGallery/0319-resized.jpg", "images/resized/miscGallery/0320-resized.jpg", "images/resized/miscGallery/0321-resized.jpg", "images/resized/miscGallery/0322-resized.jpg", "images/resized/miscGallery/0323-resized.jpg", "images/resized/miscGallery/0324-resized.jpg", "images/resized/miscGallery/0325-resized.jpg", "images/resized/miscGallery/0326-resized.jpg", "images/resized/miscGallery/0327-resized.jpg", "images/resized/miscGallery/0328-resized.jpg", "images/resized/miscGallery/0329-resized.jpg", "images/resized/miscGallery/0330-resized.jpg", "images/resized/miscGallery/0331-resized.jpg", "images/resized/miscGallery/0332-resized.jpg", "images/resized/miscGallery/0333-resized.jpg"];
+    $("#officerGrid").css("display", "none");
+    $("#songCreedGrid").css("display", "none");
+    $("#contactGrid").css("display", "none");
+    //WILL BE ADDING "images/resized/miscGallery" TO ALL IMAGES
+    //MAKE SURE IS IN the -resized /resized directory
+    allImages = ["acatest2-resized.JPG", "acatest-resized.JPG", "bazaarbreak-resized.JPG", "CirceAphrodite-resized.JPG", "dinner-resized.JPG", "discus2-resized.JPG", "discus3-resized.JPG", "discus4-resized.JPG", "discuss1-resized.JPG", "electionspeeches1-resized.JPG", "electionspeeches2-resized.JPG", "finalcertamen1-resized.JPG", "finalcertamen2-resized.JPG", "gladiator1-resized.JPG", "gladiator2-resized.JPG", "gladiator4-resized.JPG", "gladiator5-resized.JPG", "Greekdancing-resized.png", "hephaestusaphrodite-resized.JPG", "LucasMaleah-resized.JPG", "NationalConvention0000-resized.jpg", "NationalConvention0001-resized.jpg", "NationalConvention0003-resized.jpg", "NationalConvention0004-resized.jpg", "NationalConvention0005-resized.jpg", "NationalConvention0007-resized.jpg", "NationalConvention0008-resized.jpg", "NationalConvention0009-resized.jpg", "NationalConvention0010-resized.jpg", "NationalConvention0011-resized.jpg", "NationalConvention0012-resized.jpg", "NationalConvention0013-resized.jpg", "NationalConvention0014-resized.jpg", "NationalConvention0015-resized.jpg", "NationalConvention0017-resized.jpg", "NationalConvention0018-resized.jpg", "NationalConvention0021-resized.jpg", "NationalConvention0023-resized.jpg", "newofficers-resized.JPG", "oldWix0001-resized.jpg", "oldWix0002-resized.jpg", "oldWix0003-resized.jpg", "oldWix0006-resized.jpg", "oldWix0007-resized.jpg", "oldWix0008-resized.jpg", "oldWix0011-resized.jpg", "oldWix0012-resized.jpg", "oldWix0013-resized.jpg", "oldWix0014-resized.jpg", "oldWix0015-resized.jpg", "oldWix0016-resized.jpg", "oldWix0017-resized.jpg", "oldWix0018-resized.jpg", "oldWix0019-resized.jpg", "oldWix0020-resized.jpg", "oldWix0022-resized.jpg", "oldWix0023-resized.jpg", "oldWix0024-resized.jpg", "oldWix0025-resized.jpg", "oldWix0026-resized.jpg", "oldWix0027-resized.jpg", "oldWix0028-resized.jpg", "oldWix0029-resized.jpg", "oldWix0030-resized.jpg", "oldWix0031-resized.jpg", "oldWix0032-resized.jpg", "oldWix0033-resized.jpg", "oldWix0034-resized.jpg", "oldWix0035-resized.jpg", "oldWix0036-resized.jpg", "oldWix0037-resized.jpg", "oldWix0039-resized.jpg", "oldWix0040-resized.jpg", "oldWix0041-resized.jpg", "oldWix0042-resized.jpg", "oldWix0043-resized.jpg", "oldWix0044-resized.jpg", "oldWix0045-resized.jpg", "oldWix0046-resized.jpg", "oldWix0047-resized.jpg", "oldWix0050-resized.jpg", "oldWix0051-resized.jpg", "oldWix0052-resized.jpg", "oldWix0053-resized.jpg", "oldWix0054-resized.jpg", "oldWix0056-resized.jpg", "oldWix0058-resized.jpg", "oldWix0059-resized.jpg", "oldWix0060-resized.jpg", "oldWix0061-resized.jpg", "oldWix0063-resized.jpg", "oldWix0064-resized.jpg", "oldWix0065-resized.jpg", "oldWix0066-resized.jpg", "oldWix0069-resized.jpg", "oldWix0071-resized.jpg", "oldWix0072-resized.jpg", "oldWix0073-resized.jpg", "oldWix0074-resized.jpg", "oldWix0075-resized.jpg", "oldWix0076-resized.jpg", "oldWix0077-resized.jpg", "oldWix0078-resized.jpg", "oldWix0079-resized.jpg", "oldWix0080-resized.jpg", "oldWix0081-resized.jpg", "oldWix0082-resized.jpg", "oldWix0083-resized.jpg", "oldWix0085-resized.jpg", "oldWix0088-resized.jpg", "oldWix0089-resized.jpg", "oldWix0090-resized.jpg", "oldWix0092-resized.jpg", "oldWix0093-resized.jpg", "oldWix0095-resized.jpg", "oldWix0096-resized.jpg", "oldWix0097-resized.jpg", "oldWix0098-resized.jpg", "oldWix0099-resized.jpg", "oldWix0100-resized.jpg", "oldWix0101-resized.jpg", "oldWix0102-resized.jpg", "oldWix0103-resized.jpg", "oldWix0105-resized.jpg", "oldWix0106-resized.jpg", "oldWix0108-resized.jpg", "oldWix0109-resized.jpg", "oldWix0110-resized.jpg", "oldWix0111-resized.jpg", "oldWix0113-resized.jpg", "oldWix0115-resized.jpg", "oldWix0116-resized.jpg", "oldWix0117-resized.jpg", "oldWix0118-resized.jpg", "oldWix0119-resized.jpg", "oldWix0120-resized.jpg", "oldWix0122-resized.jpg", "oldWix0123-resized.jpg", "oldWix0124-resized.jpg", "oldWix0125-resized.jpg", "oldWix0126-resized.jpg", "oldWix0127-resized.jpg", "oldWix0128-resized.jpg", "oldWix0129-resized.jpg", "oldWix0130-resized.jpg", "oldWix0131-resized.jpg", "oldWix0132-resized.jpg", "oldWix0133-resized.jpg", "oldWix0135-resized.jpg", "oldWix0136-resized.jpg", "oldWix0137-resized.jpg", "oldWix0138-resized.jpg", "oldWix0139-resized.jpg", "oldWix0140-resized.jpg", "oldWix0143-resized.jpg", "oldWix0144-resized.jpg", "oldWix0146-resized.jpg", "oldWix0147-resized.jpg", "oldWix0148-resized.jpg", "oldWix0150-resized.jpg", "oldWix0152-resized.jpg", "oldWix0154-resized.jpg", "oldWix0155-resized.jpg", "oldWix0157-resized.jpg", "oldWix0158-resized.jpg", "oldWix0159-resized.jpg", "oldWix0160-resized.jpg", "oldWix0163-resized.jpg", "oldWix0164-resized.jpg", "oldWix0165-resized.jpg", "oldWix0166-resized.jpg", "oldWix0167-resized.jpg", "oldWix0168-resized.jpg", "oldWix0169-resized.jpg", "oldWix0170-resized.jpg", "oldWix0171-resized.jpg", "oldWix0172-resized.jpg", "oldWix0174-resized.jpg", "oldWix0175-resized.jpg", "oldWix0176-resized.jpg", "oldWix0177-resized.jpg", "oldWix0178-resized.jpg", "oldWix0179-resized.jpg", "oldWix0180-resized.jpg", "oldWix0182-resized.jpg", "oldWix0183-resized.jpg", "oldWix0186-resized.jpg", "oldWix0187-resized.jpg", "oldWix0188-resized.jpg", "oldWix0189-resized.jpg", "oldWix0190-resized.jpg", "oldWix0191-resized.jpg", "oldWix0193-resized.jpg", "oldWix0194-resized.jpg", "oldWix0195-resized.jpg", "oldWix0196-resized.jpg", "oldWix0197-resized.jpg", "oldWix0198-resized.jpg", "oldWix0199-resized.jpg", "oldWix0201-resized.jpg", "oldWix0202-resized.jpg", "oldWix0203-resized.jpg", "oldWix0205-resized.jpg", "oldWix0206-resized.jpg", "oldWix0207-resized.jpg", "oldWix0208-resized.jpg", "oldWix0209-resized.jpg", "oldWix0210-resized.jpg", "oldWix0211-resized.jpg", "oldWix0212-resized.jpg", "oldWix0213-resized.jpg", "oldWix0217-resized.jpg", "oldWix0219-resized.jpg", "oldWix0220-resized.jpg", "oldWix0221-resized.jpg", "oldWix0222-resized.jpg", "oldWix0223-resized.jpg", "oldWix0224-resized.jpg", "oldWix0225-resized.jpg", "oldWix0227-resized.jpg", "oldWix0228-resized.jpg", "oldWix0229-resized.jpg", "oldWix0230-resized.jpg", "oldWix0231-resized.jpg", "oldWix0233-resized.jpg", "oldWix0234-resized.jpg", "oldWix0235-resized.jpg", "oldWix0236-resized.jpg", "oldWix0237-resized.jpg", "oldWix0238-resized.jpg", "oldWix0239-resized.jpg", "oldWix0240-resized.jpg", "oldWix0242-resized.jpg", "oldWix0243-resized.jpg", "oldWix0244-resized.jpg", "oldWix0245-resized.jpg", "oldWix0246-resized.jpg", "oldWix0247-resized.jpg", "oldWix0248-resized.jpg", "oldWix0249-resized.jpg", "oldWix0250-resized.jpg", "oldWix0251-resized.jpg", "oldWix0252-resized.jpg", "oldWix0253-resized.jpg", "oldWix0254-resized.jpg", "oldWix0255-resized.jpg", "oldWix0256-resized.jpg", "oldWix0259-resized.jpg", "oldWix0260-resized.jpg", "oldWix0261-resized.jpg", "oldWix0262-resized.jpg", "oldWix0263-resized.jpg", "oldWix0264-resized.jpg", "oldWix0265-resized.jpg", "oldWix0266-resized.jpg", "oldWix0267-resized.jpg", "oldWix0270-resized.jpg", "oldWix0271-resized.jpg", "oldWix0272-resized.jpg", "oldWix0274-resized.jpg", "oldWix0275-resized.jpg", "oldWix0276-resized.jpg", "oldWix0277-resized.jpg", "oldWix0278-resized.jpg", "oldWix0279-resized.jpg", "oldWix0280-resized.jpg", "oldWix0283-resized.jpg", "oldWix0284-resized.jpg", "oldWix0285-resized.jpg", "oldWix0286-resized.jpg", "oldWix0287-resized.jpg", "oldWix0288-resized.jpg", "oldWix0289-resized.jpg", "oldWix0290-resized.jpg", "oldWix0291-resized.jpg", "oldWix0292-resized.jpg", "oldWix0293-resized.jpg", "oldWix0294-resized.jpg", "oldWix0295-resized.jpg", "oldWix0296-resized.jpg", "oldWix0297-resized.jpg", "oldWix0298-resized.jpg", "oldWix0299-resized.jpg", "oldWix0300-resized.jpg", "oldWix0301-resized.jpg", "oldWix0302-resized.jpg", "oldWix0303-resized.jpg", "oldWix0304-resized.jpg", "oldWix0305-resized.jpg", "oldWix0306-resized.jpg", "oldWix0307-resized.jpg", "oldWix0308-resized.jpg", "oldWix0309-resized.jpg", "oldWix0310-resized.jpg", "oldWix0311-resized.jpg", "oldWix0312-resized.jpg", "oldWix0314-resized.jpg", "oldWix0315-resized.jpg", "oldWix0316-resized.jpg", "oldWix0317-resized.jpg", "oldWix0318-resized.jpg", "oldWix0319-resized.jpg", "oldWix0320-resized.jpg", "oldWix0321-resized.jpg", "oldWix0322-resized.jpg", "oldWix0323-resized.jpg", "oldWix0324-resized.jpg", "oldWix0326-resized.jpg", "oldWix0327-resized.jpg", "oldWix0328-resized.jpg", "oldWix0329-resized.jpg", "oldWix0330-resized.jpg", "oldWix0332-resized.jpg", "oldWix0333-resized.jpg", "peepcontest1-resized.png", "peepcontest2-resized.png", "squadoriginal-resized.jpeg", "squad-resized.jpeg", "talentshow1-resized.JPG", "talentshow2-resized.JPG", "talentshow3-resized.JPG", "Tweets0000-resized.jpg", "Tweets0001-resized.jpg", "Tweets0002-resized.jpg", "Tweets0003-resized.jpg", "Tweets0004-resized.jpg", "weaponspile-resized.jpg"];
+
+    // cd /home/jonah/Dropbox/Public/MDJCL/yeoman/app/images/resized/miscGallery; echo '["'`ls| tr "\n" "@"|sed 's/@/","/g'|sed 's/","$//g'`'"]'|copy
     shuffle(allImages);
-    var myLeading = moltenLeading(".header-top-left", {
-        minline: 1.9, // Integer: Minimum line-height for the element (multiplied by the element's font-size)
-        maxline: 2.5, // Integer: Maximum line-height for the element (multiplied by the element's font-size)
-        minwidth: 320, // Integer: Minimum element width where the adjustment starts
-        maxwidth: 1500, // Integer: Maximum element width where the adjustment stops
-        units: "px" // String: CSS units used for the min & max widths, can be "px", "em" or "rem"
-    });
+    // var myLeading = moltenLeading(".header-top-left", {
+    //     minline: 1.9, // Integer: Minimum line-height for the element (multiplied by the element's font-size)
+    //     maxline: 2.5, // Integer: Maximum line-height for the element (multiplied by the element's font-size)
+    //     minwidth: 320, // Integer: Minimum element width where the adjustment starts
+    //     maxwidth: 1500, // Integer: Maximum element width where the adjustment stops
+    //     units: "px" // String: CSS units used for the min & max widths, can be "px", "em" or "rem"
+    // });
     $("img.lazyload").unveil(1000, function() {
         $(this).load(function() {
             // $(this).hide().fadeIn("slow");
@@ -33,23 +42,30 @@ $(document).ready(function() {
     var toAdd = "<div class='row no-gutter'>" + $("#test").html() + "</div>";
     startingNumber = 0;
     $(window).scroll(function() {
-        if (oldGrid === "photoGrid" && $(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+        if (oldGrid === "photoGrid" && $(window).scrollTop() >= $(document).height() - $(window).height() - 400) {
             console.log('end of page');
             append();
         }
     });
     append();
+    setTimeout(function() {
+        onHashChange("start");
+    }, 500);
+    window.onhashchange = onHashChange;
 });
 
 function append() {
-    html = '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
+    console.log("appending");
+    html = '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
     startingNumber += 3;
-    html += '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
+    html += '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
+    startingNumber += 3;
+    html += '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
     startingNumber += 3;
     $("#photoContainer").append(html);
     $("#photoGrid img").unveil();
 }
-//var oldGrid = "calendarGrid";
+
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
@@ -67,21 +83,51 @@ function shuffle(array) {
 }
 
 function toHomeScreen() {
-    $(".notSelected").removeClass("notSelected");
-    $(".selected").not(".overlineContainer").collapse("hide");
-    $(".selected").removeClass("selected");
-    if (oldGrid !== "homeScreenGrid") {
-        $("#homeScreenGrid").toggle("slide", {
-            direction: "right"
-        }, 2000);
-        $("#" + oldGrid).toggle("slide", {
-            direction: "left"
-        }, 2000);
-        oldGrid = "homeScreenGrid";
+        // console.log("tohomescreen");
+        $(".notSelected").removeClass("notSelected");
+        $(".selected").not(".overlineContainer").collapse("hide");
+        $(".selected").removeClass("selected");
+        if (oldGrid !== "homeScreenGrid") {
+            $("#homeScreenGrid").toggle("slide", {
+                direction: "right"
+            }, 2000);
+            $("#" + oldGrid).toggle("slide", {
+                direction: "left"
+            }, 2000);
+            oldGrid = "homeScreenGrid";
+        }
+        document.location.hash = "";
     }
+    // Returns a function, that, as long as it continues to be invoked, will not
+    // be triggered. The function will be called after it stops being called for
+    // N milliseconds. If `immediate` is passed, trigger the function on the
+    // leading edge, instead of the trailing.
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this,
+            args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) {
+                func.apply(context, args);
+            }
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) {
+            func.apply(context, args);
+        }
+
+    };
 }
-$(".clickCollapse").click(function() {
+
+onClickMenu = debounce(function(e) {
+    //so if double click, won't go back and forth. Only runs every 500ms
     console.log(this);
+    e.preventDefault();
     if (oldElement === this) {
         console.log("same elemetn 2x");
         toHomeScreen();
@@ -98,9 +144,12 @@ $(".clickCollapse").click(function() {
         $(this).addClass("selected");
         oldElement = this;
     }
-});
+}, 500);
+
+$(".clickCollapse").click(onClickMenu);
 
 function changeGrid(newGrid) {
+    // console.log(newGrid);
     $("#" + newGrid + " img").trigger("unveil");
     if (oldGrid !== newGrid) {
         $("#" + newGrid).toggle("slide", {
@@ -110,5 +159,20 @@ function changeGrid(newGrid) {
             direction: "right"
         }, 2000);
         oldGrid = newGrid;
+    }
+    document.location.hash = newGrid.replace("Grid", "");
+}
+
+function onHashChange(isStart) {
+    hashLocation = document.location.hash.replace("#", "") + "Grid";
+    if (hashLocation !== "" && allGrid.indexOf(hashLocation) !== -1) {
+        // console.log(hashLocation)
+        changeGrid(hashLocation);
+        if (isStart === "start" ) {
+            hashThis = $('a[onclick*="' + hashLocation + '"]');
+            hashThis.addClass("selected");
+            $($(hashThis).attr("data-target")).collapse("show").addClass("selected");
+            $(".clickCollapse").not(hashThis).addClass("notSelected");
+        }
     }
 }
