@@ -171,11 +171,25 @@ function onHashChange(isStart) {
     if (hashLocation !== "" && allGrid.indexOf(hashLocation) !== -1) {
         // console.log(hashLocation)
         changeGrid(hashLocation);
-        if (isStart === "start" ) {
+        if (isStart === "start") {
             hashThis = $('a[onclick*="' + hashLocation + '"]');
-            hashThis.addClass("selected");
-            $($(hashThis).attr("data-target")).collapse("show").addClass("selected");
-            $(".clickCollapse").not(hashThis).addClass("notSelected");
+
+            if (hashThis.attr("class").indexOf("clickCollapse") != -1) {
+                //Is a main menu not a sub part of a menu
+                hashThis = $('a[onclick*="' + hashLocation + '"]');
+                hashThis.addClass("selected");
+                $($(hashThis).attr("data-target")).collapse("show").addClass("selected");
+                $(".clickCollapse").not(hashThis).addClass("notSelected");
+
+            } else {
+                //is a sub menu
+                 parentDataAttr = hashThis.eq(0).parent().attr("class").match(/collapseRow[A-z]+/)[0]
+                         parentElem=  $('[data-target=".'+parentDataAttr+'"]')
+            $("." + parentDataAttr).collapse("show").addClass("selected");
+                 parentElem.addClass("selected")
+                         $(".clickCollapse").not(parentElem).addClass("notSelected")
+
+            }
         }
     }
 }
