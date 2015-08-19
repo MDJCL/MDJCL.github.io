@@ -300,16 +300,16 @@ a:hover>.img-overlay>.project-overlay>.header-top-left {
 .overlineContainer {
     cursor: pointer;
 }
-.opacityZero {
-    opacity: 0!important
-}
-.opacityOne {
-    opacity: 1!important
-}
-.transitionOpacity {
-    /* opacity: 0; */
-    transition: opacity 5s ease-in;
-}
+/* .opacityZero { */
+/*     opacity: 0!important */
+/* } */
+/* .opacityOne { */
+/*     opacity: 1!important */
+/* } */
+/* .transitionOpacity { */
+/*     /1* opacity: 0; *1/ */
+/*     transition: opacity 5s ease-in; */
+/* } */
 #footer {
     position: absolute;
     color: green;

@@ -34,11 +34,14 @@ $(document).ready(function() {
     //     maxwidth: 1500, // Integer: Maximum element width where the adjustment stops
     //     units: "px" // String: CSS units used for the min & max widths, can be "px", "em" or "rem"
     // });
-    $("img.lazyload").unveil(1000, function() {
-        $(this).load(function() {
-            // $(this).hide().fadeIn("slow");
-        });
-    });
+    //
+    $("img.lazyload").unveil(500)
+
+    // $("img.lazyload").unveil(1000, function() {
+    //     // $(this).load(function() {
+    //     //     $(this).hide().fadeIn("slow");
+    //     // });
+    // });
     var toAdd = "<div class='row no-gutter'>" + $("#test").html() + "</div>";
     startingNumber = 0;
     $(window).scroll(function() {
@@ -63,7 +66,7 @@ function append() {
     html += '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
     startingNumber += 3;
     $("#photoContainer").append(html);
-    $("#photoGrid img").unveil();
+    $("#photoGrid img").unveil().trigger("unveil");
 }
 
 function shuffle(array) {
