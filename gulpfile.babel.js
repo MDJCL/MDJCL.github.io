@@ -128,7 +128,8 @@ gulp.task('resize', () => {
 gulp.task('deploy', function() {
     //build needs to be already done
     return gulp.src("./dist/**/*").pipe($.ghPages({
-            branch: "master"
+            "branch": "master",
+           "remoteUrl": "https://github.com/MDJCL/MDJCL.github.io.git"
     }))
 });
 gulp.task('spellcheck', function() {
@@ -288,7 +289,7 @@ gulp.task('critical', ['copystyles'], function(cb) {
             // Prefix for asset directory
 
             // ignore css rules
-            ignore: ['@font-face']
+            ignore: ['@font-face', '.btn']
         })).pipe(gulp.dest('dist'));
 
     // critical.generateInline({
