@@ -127,7 +127,9 @@ gulp.task('resize', () => {
 })
 gulp.task('deploy', function() {
     //build needs to be already done
-    return gulp.src("./dist/**/*").pipe($.ghPages())
+    return gulp.src("./dist/**/*").pipe($.ghPages({
+            branch: "master"
+    }))
 });
 gulp.task('spellcheck', function() {
     // throw "didn't work"
