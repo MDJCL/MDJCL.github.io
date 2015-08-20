@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <!-- test -->
+
 <head>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -58,17 +59,17 @@
                     <!--start hidden for responsive row 1 -->
                     <div class="row hidden-md hidden-lg noDiv">
                         <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
-                            <a class="overlineContainer">Certamen</a>
+                            <a class="overlineContainer" onclick="changeGrid('certamenGrid')">Certamen</a>
                         </div>
                         <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
-                            <a class="overlineContainer">Spelling Bee</a>
+                            <a class="overlineContainer" onclick="changeGrid('spellingGrid')">Spelling Bee</a>
                         </div>
                         <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo">
-                            <a class="overlineContainer">Museum Days</a>
+                            <a class="overlineContainer" onclick="changeGrid('museumGrid')">Museum Days</a>
                         </div>
-                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn">
-                            <a class="overlineContainer">Upcoming Fun</a>
-                        </div>
+                        <!-- <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneTwo lastColumn"> -->
+                        <!--     <a class="overlineContainer" onclick="changeGrid('certamenGrid')">Upcoming Fun</a> -->
+                        <!-- </div> -->
                     </div>
                     <!--end hidden for responsive row 1 -->
                     <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
@@ -112,17 +113,17 @@
                 <!--                MAKE SURE COPY THIS EXACT SAME THING ABOVE FOR MOBILE !!!!!!!!!!!!!!!-->
                 <div class="row header collapse collapseRowOneTwo">
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Certamen</a>
+                        <a class="overlineContainer" onclick="changeGrid('certamenGrid')">Certamen</a>
                     </div>
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Spelling Bee</a>
+                        <a class="overlineContainer" onclick="changeGrid('spellingGrid')">Spelling Bee</a>
                     </div>
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Museum Days</a>
+                        <a class="overlineContainer" onclick="changeGrid('museumGrid')">Museum Days</a>
                     </div>
-                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Upcoming Fun</a>
-                    </div>
+                    <!-- <div class="col-md-3 col-lg-3 hidden-xs hidden-sm"> -->
+                    <!--     <a class="overlineContainer waiting">Upcoming Fun</a> -->
+                    <!-- </div> -->
                 </div>
                 <div class="row header collapse collapseRowOneThree">
                     <!-- <div class="col-md-3 col-lg-3 hidden-xs hidden-sm"> -->
@@ -137,18 +138,18 @@
                     <!-- <div class="col-md-3 col-lg-3 hidden-xs hidden-sm"> -->
                     <!--     <a class="overlineContainer" onclick="changeGrid('loyolaGrid')">Loyola</a> -->
                     <!-- </div> -->
-                <!-- </div> -->
-                <!-- <div class="row header collapse collapseRowOneThree"> -->
+                    <!-- </div> -->
+                    <!-- <div class="row header collapse collapseRowOneThree"> -->
                     <!-- <div class="col-md-3 col-lg-3 hidden-xs hidden-sm"> -->
                     <!--     <a class="overlineContainer" onclick="changeGrid('eleanorGrid')">Eleanor Roosevelt</a> -->
                     <!-- </div> -->
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                            <a class="overlineContainer" data-featherlight="<p>We are working to have each school contribute to their own page on MDJCL.org. If you want to be your school's delegate, please talk to your Latin teacher.<br><br>Gratias</p>" onclick="changeGrid('contactGrid')">Add Your School!</a>
+                        <a class="overlineContainer" data-featherlight="<p>We are working to have each school contribute to their own page on MDJCL.org. If you want to be your school's delegate, please talk to your Latin teacher.<br><br>Gratias</p>" onclick="changeGrid('contactGrid')">Add Your School!</a>
                     </div>
                 </div>
                 <div class="row header collapse collapseRowOneFour">
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer waiting" >Coming Soon!</a>
+                        <a class="overlineContainer waiting">Coming Soon!</a>
                     </div>
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
                         <a class="overlineContainer" onclick="changeGrid('pastTorchGrid')">Past Torches</a>
@@ -833,7 +834,7 @@ MDJCL Creed
                         </div>
                         <a href="#" data-featherlight="#emailDiv">
                             <div class="img-overlay">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://commons.wikimedia.org/wiki/File:1934_US_Airmail_Stamped_Envelope_Indicium_-_6_cents.jpg'>https://commons.wikimedia.org/wiki/File:1934_US_Airmail_Stamped_Envelope_Indicium_-_6_cents.jpg</a></p>. ">?</div>
+                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a class='showLinks' href='https://commons.wikimedia.org/wiki/File:1934_US_Airmail_Stamped_Envelope_Indicium_-_6_cents.jpg'>https://commons.wikimedia.org/wiki/File:1934_US_Airmail_Stamped_Envelope_Indicium_-_6_cents.jpg</a></p>. ">?</div>
 
                                 <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/envelopeLogo-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
                                 <div class="project-overlay">
@@ -905,107 +906,146 @@ MDJCL Creed
         <div id="eastonGrid">
             <div class="container-fluid no-gutter gridContainer" style="background:white">
                 <div class="row">
-                        <div class="img-overlay">
-                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/easton-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                            <div class="project-overlay">
-                                <h1 class="header-top-left">Easton High School</h1>
-                            </div>
+                    <div class="img-overlay">
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/easton-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">Easton High School</h1>
                         </div>
+                    </div>
                 </div>
                 <div class="row no-gutter waiting">
-                            <div class="img-overlay">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
-                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                                <div class="project-overlay">
-                                    <h1 class="header-top-left waiting">More Coming Soon</h1>
-                                </div>
-                            </div>
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
+                        <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left waiting">More Coming Soon</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="dulaneyGrid">
             <div class="container-fluid no-gutter gridContainer" style="background:white">
                 <div class="row">
-                        <div class="img-overlay">
-                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/dulaney-resized.JPG" src="images/resized/NJCL_smaller-resized.jpg">
-                            <div class="project-overlay">
-                                <h1 class="header-top-left">Dulaney High School</h1>
-                            </div>
+                    <div class="img-overlay">
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/dulaney-resized.JPG" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">Dulaney High School</h1>
                         </div>
+                    </div>
                 </div>
                 <div class="row no-gutter">
-                            <div class="img-overlay waiting">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
-                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                                <div class="project-overlay">
-                                    <h1 class="header-top-left waiting">More Coming Soon</h1>
-                                </div>
-                            </div>
+                    <div class="img-overlay waiting">
+                        <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
+                        <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left waiting">More Coming Soon</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="countryGrid">
             <div class="container-fluid no-gutter gridContainer" style="background:white">
                 <div class="row">
-                        <div class="img-overlay">
-                                <div class="btn" data-featherlight="<p>Image from Google, DigitalGlobe (as per <a href='http://www.google.com/permissions/geoguidelines/attr-guide.html'>http://www.google.com/permissions/geoguidelines/attr-guide.html</a>)</p>. ">?</div>
-                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/countrySchool-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                            <div class="project-overlay">
-                                <h1 class="header-top-left">The Country School</h1>
-                            </div>
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image from Google, DigitalGlobe (as per <a href='http://www.google.com/permissions/geoguidelines/attr-guide.html'>http://www.google.com/permissions/geoguidelines/attr-guide.html</a>)</p>. ">?</div>
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/countrySchool-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">The Country School</h1>
                         </div>
+                    </div>
                 </div>
                 <div class="row no-gutter">
-                            <div class="img-overlay waiting">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
-                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                                <div class="project-overlay">
-                                    <h1 class="header-top-left waiting">More Coming Soon</h1>
-                                </div>
-                            </div>
+                    <div class="img-overlay waiting">
+                        <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
+                        <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left waiting">More Coming Soon</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="loyolaGrid">
             <div class="container-fluid no-gutter gridContainer" style="background:white">
                 <div class="row">
-                        <div class="img-overlay waiting">
-                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/loyola-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                            <div class="project-overlay">
-                                <h1 class="header-top-left">Loyola Blakefield</h1>
-                            </div>
+                    <div class="img-overlay waiting">
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/loyola-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">Loyola Blakefield</h1>
                         </div>
+                    </div>
                 </div>
                 <div class="row no-gutter">
-                            <div class="img-overlay waiting">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
-                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                                <div class="project-overlay">
-                                    <h1 class="header-top-left waiting">More Coming Soon</h1>
-                                </div>
-                            </div>
+                    <div class="img-overlay waiting">
+                        <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
+                        <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left waiting">More Coming Soon</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="eleanorGrid">
             <div class="container-fluid no-gutter gridContainer" style="background:white">
                 <div class="row">
-                        <div class="img-overlay">
-                                <div class="btn" data-featherlight="<p>Image from Google, DigitalGlobe (as per <a href='http://www.google.com/permissions/geoguidelines/attr-guide.html'>http://www.google.com/permissions/geoguidelines/attr-guide.html</a>)</p>. ">?</div>
-                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/eleanor-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                            <div class="project-overlay">
-                                <h1 class="header-top-left">Eleanor Roosevelt High School</h1>
-                            </div>
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image from Google, DigitalGlobe (as per <a href='http://www.google.com/permissions/geoguidelines/attr-guide.html'>http://www.google.com/permissions/geoguidelines/attr-guide.html</a>)</p>. ">?</div>
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/eleanor-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">Eleanor Roosevelt High School</h1>
                         </div>
+                    </div>
                 </div>
                 <div class="row no-gutter">
-                            <div class="waiting img-overlay">
-                                <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
-                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
-                                <div class="project-overlay">
-                                    <h1 class="header-top-left waiting">More Coming Soon</h1>
-                                </div>
-                            </div>
+                    <div class="waiting img-overlay">
+                        <div class="btn" data-featherlight="<p>Image rights provided under the public domain at <a href='https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg'>https://en.wikipedia.org/wiki/Gallo-Roman_culture#/media/File:Sarcophagus_Rignieux_le_Franc_Ain_end_of_4th_century.jpg</a></p>. ">?</div>
+                        <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/moreComing-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left waiting">More Coming Soon</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="certamenGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row">
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image from the <a class='showLinks' href='http://www.romansgohome.com/certamen-for-ipad'>Romans Go Home Certamen iPad App</a> </p>. ">?</div>
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/certamen-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">A Certamen Match Is Coming Soon to A School Near You</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="spellingGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row">
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image from Alex Brown licenensed for use with attribution (<a class='showLinks' href='https://www.flickr.com/photos/alexbrn/4631428861'>https://www.flickr.com/photos/alexbrn/4631428861</a> </p>. ">?</div>
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/spellingBee-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">A Latin Spelling Bee Is Coming Soon to A School Near You</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="museumGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row">
+                    <div class="img-overlay">
+                        <div class="btn" data-featherlight="<p>Image from Wikimediai for use with attribution (<a class='showLinks' href='https://simple.wikipedia.org/wiki/Renaissance#/media/File:Raphael_School_of_Athens.jpg'>https://simple.wikipedia.org/wiki/Renaissance#/media/File:Raphael_School_of_Athens.jpg</a> </p>. ">?</div>
+                        <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/museum-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">A Latin-themed Museum Visiti Is Coming Soon to An Area Near You</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
