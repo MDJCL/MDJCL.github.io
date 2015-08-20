@@ -97,7 +97,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Confusion*,Jonah.jpg,EllaJoshi.jpg,MsKunzResized.jpg,Liz.jpg,EllieResized.jpg,Edmund.jpg,Katie.jpg,JonahPlant.jpg,MsKunz2Resized.jpg,MsKunz3Resized.jpg,MsKunz4Resized.jpg,Liz2.jpg,Liz2Resized.jpg,Ellie2.jpg,Ellie2Resized.jpg,RomanWantsYou.jpg,samWants.jpg}': {
+        '{confused*,Jonah.jpg,EllaJoshi.jpg,MsKunzResized.jpg,Liz.jpg,EllieResized.jpg,Edmund.jpg,Katie.jpg,JonahPlant.jpg,MsKunz2Resized.jpg,MsKunz3Resized.jpg,MsKunz4Resized.jpg,Liz2.jpg,Liz2Resized.jpg,Ellie2.jpg,Ellie2Resized.jpg,RomanWantsYou.jpg,samWants.jpg}': {
             //for stricter 6/12
             width: 654,
             height: 437,
