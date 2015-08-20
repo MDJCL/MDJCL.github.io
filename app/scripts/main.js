@@ -45,7 +45,7 @@ $(document).ready(function() {
     //     units: "px" // String: CSS units used for the min & max widths, can be "px", "em" or "rem"
     // });
     //
-    $("img.lazyload").unveil(500)
+    $("img.lazyload").unveil(500);
 
     // $("img.lazyload").unveil(1000, function() {
     //     // $(this).load(function() {
@@ -184,7 +184,7 @@ function onHashChange(isStart) {
         if (isStart === "start") {
             hashThis = $('a[onclick*="' + hashLocation + '"]');
 
-            if (hashThis.attr("class").indexOf("clickCollapse") != -1) {
+            if (hashThis.attr("class").indexOf("clickCollapse") !== -1) {
                 //Is a main menu not a sub part of a menu
                 hashThis = $('a[onclick*="' + hashLocation + '"]');
                 hashThis.addClass("selected");
@@ -193,11 +193,11 @@ function onHashChange(isStart) {
 
             } else {
                 //is a sub menu
-                 parentDataAttr = hashThis.eq(0).parent().attr("class").match(/collapseRow[A-z]+/)[0]
-                         parentElem=  $('[data-target=".'+parentDataAttr+'"]')
-            $("." + parentDataAttr).collapse("show").addClass("selected");
-                 parentElem.addClass("selected")
-                         $(".clickCollapse").not(parentElem).addClass("notSelected")
+                parentDataAttr = hashThis.eq(0).parent().attr("class").match(/collapseRow[A-z]+/)[0];
+                parentElem = $('[data-target=".' + parentDataAttr + '"]');
+                $("." + parentDataAttr).collapse("show").addClass("selected");
+                parentElem.addClass("selected");
+                $(".clickCollapse").not(parentElem).addClass("notSelected");
 
             }
         }
