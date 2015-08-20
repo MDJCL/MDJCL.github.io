@@ -106,7 +106,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*}': {
             width: "100%",
             height: "100%",
             rename: {

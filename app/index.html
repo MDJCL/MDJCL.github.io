@@ -17,7 +17,7 @@
     <!-- <meta property="og:image"  content="TODO ADD IMAGE" /> -->
 
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel="shortcut icon" href="favicon.ico" />
 
 
     <!-- build:css styles/vendor.css -->
@@ -100,16 +100,10 @@
                     </div>
                     <div class="row hidden-md hidden-lg noDiv oswaldFont">
                         <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
-                            <a class="overlineContainer">Month of May</a>
+                            <a class="overlineContainer" style="cursor:wait;">Coming Soon!</a>
                         </div>
                         <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
-                            <a class="overlineContainer">Month of April</a>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour">
-                            <a class="overlineContainer">Month of March</a>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 responsiveRow collapse collapseRowOneFour lastColumn">
-                            <a class="overlineContainer">Past Torches</a>
+                            <a class="overlineContainer" onclick="changeGrid('pastTorchGrid')">Past Torches</a>
                         </div>
                     </div>
                 </div>
@@ -152,16 +146,10 @@
                 </div>
                 <div class="row header collapse collapseRowOneFour">
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Month of May</a>
+                        <a class="overlineContainer" style="cursor:wait;">Coming Soon!</a>
                     </div>
                     <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Month of April</a>
-                    </div>
-                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Month of March</a>
-                    </div>
-                    <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
-                        <a class="overlineContainer">Past Torches</a>
+                        <a class="overlineContainer" onclick="changeGrid('pastTorchGrid')">Past Torches</a>
                     </div>
                 </div>
                 <!-- end place for row 1 collapse toggle-->
@@ -861,6 +849,55 @@ MDJCL Creed
                 </div>
             </div>
         </div>
+        <div id="pastTorchGrid">
+            <div class="container-fluid no-gutter gridContainer" style="background:white">
+                <div class="row">
+                    <a href="Docs/Newsletter%20-%202.pdf">
+                        <div class="img-overlay">
+                            <img class="img-responsive lazyload " alt="Map of MDJCL Event" data-src="images/resized/PastTorch0004-resized.png" src="images/resized/NJCL_smaller-resized.jpg">
+                            <div class="project-overlay">
+                                <h1 class="header-top-left">End of Year</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row no-gutter">
+                    <div class="col-md-6">
+                        <a href="Docs/Torch%20MD%20Issue%201.pdf">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/PastTorch0002-resized.png" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">Issue 1</h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="Docs/Torch%20MD%20Issue%203.pdf">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/PastTorch0001-resized.png" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">Issue 2</h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row no-gutter">
+                    <div >
+                        <a href="Docs/Torch-MD-Issue-4.pdf">
+                            <div class="img-overlay">
+                                <img class="img-responsive lazyload" alt="Map of MDJCL Event" data-src="images/resized/PastTorch0000-resized.png" src="images/resized/NJCL_smaller-resized.jpg">
+                                <div class="project-overlay">
+                                    <h1 class="header-top-left">Issue 4</h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script> -->
