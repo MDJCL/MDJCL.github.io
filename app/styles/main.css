@@ -350,3 +350,6 @@ a:hover>.img-overlay>.project-overlay>.header-top-left {
     text-decoration: underline;
     color: #0645AD;
 }
+.waiting{
+        cursor:wait !important;
+}

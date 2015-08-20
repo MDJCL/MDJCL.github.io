@@ -106,12 +106,20 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg}': {
             width: "100%",
             height: "100%",
             rename: {
                 suffix: "-resized"
             }
+        },
+        '{easton.jpg,dulaney.JPG,countrySchool.jpg,loyola.jpg,eleanor.jpg}': {
+            width: "654",
+            height: "100%",
+            rename: {
+                suffix: "-resized"
+            },
+            withoutEnlargement: false
         }
     }, {
         errorOnUnusedImage: false
@@ -183,7 +191,7 @@ gulp.task('serve', ['styles', 'fonts', 'images'], () => {
     });
     gulp.watch(['app/*.html', 'app/scripts/**/*.js', '.tmp/fonts/**/*']).on('change', reload);
     //jonah
-    gulp.watch('app/images/*', ['images']);
+    // gulp.watch('app/images/*', ['images']);
     //end jonah
     gulp.watch('app/styles/**/*.css', {
         debounceDelay: 2000
