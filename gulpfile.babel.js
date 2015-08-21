@@ -106,7 +106,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg,Minotaur404.jpg}': {
             width: "100%",
             height: "100%",
             rename: {
