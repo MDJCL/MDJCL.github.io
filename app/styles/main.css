@@ -267,15 +267,18 @@ padding-right: 0px;*/
 
 /* } */
 
-a {
-    color: black;
-    text-decoration: none;
-}
+/* a { */
+/*     color: black; */
+/*     text-decoration: none; */
+/* } */
 a:hover {
     text-decoration: none;
 }
-a:hover>.img-overlay>.project-overlay>.header-top-left {
+a>.img-overlay>.project-overlay>.header-top-left {
     color: #337ab7;
+}
+a:hover>.img-overlay>.project-overlay>.header-top-left {
+    color: #094C83;
 }
 .notSelected {
     opacity: .5;
