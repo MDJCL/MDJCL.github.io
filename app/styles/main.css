@@ -349,10 +349,10 @@ a:hover>.img-overlay>.project-overlay>.header-top-left {
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
-.showLinks,.showLinks a {
-    text-decoration: underline;
-    color: #0645AD;
-}
+/* .showLinks,.showLinks a { */
+/*     text-decoration: underline; */
+/*     color: #0645AD; */
+/* } */
 .waiting{
         cursor:wait !important;
 }
