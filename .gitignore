@@ -16,3 +16,5 @@ Session.vim
 *~
 *.bak
 .publish
+app/images/miscGallery/*
+!app/images/miscGallery/MISCGALLERYLOCATION
