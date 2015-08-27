@@ -20,7 +20,7 @@ gulp.task('styles', () => {
 });
 
 function lint(files) {
-// console.log("if want to run eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
+    // console.log("if want to run eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
     return () => {
         return gulp.src(files).pipe(reload({
             stream: true,
@@ -61,7 +61,7 @@ gulp.task('resizeGallery', () => {
 
 gulp.task('resize', () => {
     return gulp.src('app/images/*').pipe($.responsive({
-    //for documents, after remove all surrounding whitespace, run `montage null: Constit.png -tile 2x1 -geometry +3+0 out2.png` to add the right amount of whitespace so it doesn't go over edge
+        //for documents, after remove all surrounding whitespace, run `montage null: Constit.png -tile 2x1 -geometry +3+0 out2.png` to add the right amount of whitespace so it doesn't go over edge
         '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg}': {
             //for 4/12
             width: 430,
@@ -69,7 +69,7 @@ gulp.task('resize', () => {
             rename: {
                 suffix: "-resized"
             },
-            withoutEnlargement:false
+            withoutEnlargement: false
         },
         '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png}': {
             //for 8/12 sized
@@ -128,8 +128,8 @@ gulp.task('resize', () => {
 gulp.task('deploy', function() {
     //build needs to be already done
     return gulp.src("./dist/**/*").pipe($.ghPages({
-            "branch": "master",
-           "remoteUrl": "https://github.com/MDJCL/MDJCL.github.io.git"
+        "branch": "master",
+        "remoteUrl": "https://github.com/MDJCL/MDJCL.github.io.git"
     }))
 });
 gulp.task('spellcheck', function() {
@@ -244,15 +244,27 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], (cb) => {
 });
 gulp.task('noCritical', (callback) => {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build',  'deploy', callback);
-    runSequence(['clean', 'spellcheck', 'lint'], 'docs', 'build', callback);
+    runSequence(['clean', 'spellcheck', 'lint'], 'docs', 'build', 'sitemap',callback);
 });
 gulp.task('default', function(callback) {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical', 'deploy', callback);
-console.log("gulp deploy")
-console.log("eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
-console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html")
-    runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'critical', callback);
+    console.log("gulp deploy")
+    console.log("eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
+    console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html")
+    runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'sitemap','critical', callback);
 });
+gulp.task('sitemap', function() {
+    return gulp.src(['dist/index.html', 'dist/Docs/*'])
+        .pipe($.sitemap({
+            siteUrl: 'https://mdjcl.github.io',
+            changefreq: "weekly",
+            // pages: ["*"],
+            verbose:true
+        }))
+        .pipe(gulp.dest('./dist'));
+
+});
+
 gulp.task('copystyles', function() {
     return gulp.src(['dist/styles/main.css']).pipe($.rename({
         basename: "site" // site.css
