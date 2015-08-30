@@ -31,17 +31,21 @@ function lint(files) {
 }
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js'));
-gulp.task('html', ['styles'], () => {
+gulp.task('html', ['styles', 'copyGoogle'], () => {
     const assets = $.useref.assets({
         searchPath: ['.tmp', 'app', '.']
     });
-    return gulp.src('app/*.html').pipe($.inlineSource()).pipe(assets).pipe($.if('*.js', $.uglify())).pipe($.if('*.css', $.minifyCss({
+    return gulp.src(['app/*.html','!app/google9fd3a51767af392b.html']).pipe($.inlineSource()).pipe(assets).pipe($.if('*.js', $.uglify())).pipe($.if('*.css', $.minifyCss({
         compatibility: '*'
     }))).pipe(assets.restore()).pipe($.useref()).pipe($.if('*.html', $.minifyHtml({
         conditionals: true,
         loose: true
     }))).pipe(gulp.dest('dist'));
 });
+gulp.task('copyGoogle', () => {
+
+return gulp.src("app/google9fd3a51767af392b.html").pipe(gulp.dest('dist'))
+})
 gulp.task('resizeGallery', () => {
     return gulp.src('app/images/miscGallery/*').pipe($.responsive({
         '*': {
@@ -62,7 +66,7 @@ gulp.task('resizeGallery', () => {
 gulp.task('resize', () => {
     return gulp.src('app/images/*').pipe($.responsive({
         //for documents, after remove all surrounding whitespace, run `montage null: Constit.png -tile 2x1 -geometry +3+0 out2.png` to add the right amount of whitespace so it doesn't go over edge
-        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg}': {
+        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg,MagistraKunzConvention_0353.jpg,MagistraKunzConvention_0005.jpg}': {
             //for 4/12
             width: 430,
             height: 287,
@@ -97,7 +101,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{confused*,Jonah.jpg,EllaJoshi.jpg,MsKunzResized.jpg,Liz.jpg,EllieResized.jpg,Edmund.jpg,Katie.jpg,JonahPlant.jpg,MsKunz2Resized.jpg,MsKunz3Resized.jpg,MsKunz4Resized.jpg,Liz2.jpg,Liz2Resized.jpg,Ellie2.jpg,Ellie2Resized.jpg,RomanWantsYou.jpg,samWants.jpg}': {
+        '{confused*,Jonah.jpg,EllaJoshi.jpg,MsKunzResized.jpg,Liz.jpg,EllieResized.jpg,Edmund.jpg,Katie.jpg,JonahPlant.jpg,MsKunz2Resized.jpg,MsKunz3Resized.jpg,MsKunz4Resized.jpg,Liz2.jpg,Liz2Resized.jpg,Ellie2.jpg,Ellie2Resized.jpg,RomanWantsYou.jpg,samWants.jpg,linganore.jpg}': {
             //for stricter 6/12
             width: 654,
             height: 437,
@@ -139,7 +143,7 @@ gulp.task('spellcheck', function() {
         .pipe($.spellcheck({
             "stdout": true,
             "mode": "html",
-            "ignore": ["Linganore", "Ballenger", "th"]
+            "ignore": ["Linganore", "Ballenger", "th","linganorelatin"]
         }))
         // .pipe($.util.log())
         .pipe($.prompt.confirm({
