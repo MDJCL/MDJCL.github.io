@@ -163,7 +163,7 @@ $(".clickCollapse").click(onClickMenu);
 
 function changeGrid(newGrid) {
     // console.log(newGrid);
-    // $("#" + newGrid + " img").trigger("unveil");
+    $("#" + newGrid + " img").trigger("unveil");
     if (oldGrid !== newGrid) {
         $("#" + newGrid).toggle("slide", {
             direction: "left"
