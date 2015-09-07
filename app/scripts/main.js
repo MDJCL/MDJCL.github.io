@@ -162,7 +162,7 @@ onClickMenu = debounce(function(e) {
 $(".clickCollapse").click(onClickMenu);
 
 function changeGrid(newGrid) {
-    // console.log(newGrid);
+    // console.log("changing grid to "+newGrid);
     $("#" + newGrid + " img").trigger("unveil");
     if (oldGrid !== newGrid) {
         $("#" + newGrid).toggle("slide", {
@@ -178,6 +178,7 @@ function changeGrid(newGrid) {
 
 function onHashChange(isStart) {
     hashLocation = document.location.hash.replace("#", "") + "Grid";
+        // console.log("going to "+hashLocation)
     if (hashLocation !== "" && allGrid.indexOf(hashLocation) !== -1) {
         // console.log(hashLocation)
         changeGrid(hashLocation);
@@ -201,5 +202,7 @@ function onHashChange(isStart) {
 
             }
         }
+    }else{
+            console.log("either blank changeGrid or invalid");
     }
 }
