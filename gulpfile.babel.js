@@ -35,7 +35,7 @@ gulp.task('html', ['styles', 'copyGoogle'], () => {
     const assets = $.useref.assets({
         searchPath: ['.tmp', 'app', '.']
     });
-    return gulp.src(['app/*.html','!app/google9fd3a51767af392b.html']).pipe($.inlineSource()).pipe(assets).pipe($.if('*.js', $.uglify())).pipe($.if('*.css', $.minifyCss({
+    return gulp.src(['app/*.html', '!app/google9fd3a51767af392b.html']).pipe($.inlineSource()).pipe(assets).pipe($.if('*.js', $.uglify())).pipe($.if('*.css', $.minifyCss({
         compatibility: '*'
     }))).pipe(assets.restore()).pipe($.useref()).pipe($.if('*.html', $.minifyHtml({
         conditionals: true,
@@ -44,23 +44,26 @@ gulp.task('html', ['styles', 'copyGoogle'], () => {
 });
 gulp.task('copyGoogle', () => {
 
-return gulp.src("app/google9fd3a51767af392b.html").pipe(gulp.dest('dist'))
+    return gulp.src("app/google9fd3a51767af392b.html").pipe(gulp.dest('dist'))
 })
 gulp.task('resizeGallery', () => {
-    return gulp.src('app/images/miscGallery/*').pipe($.responsive({
-        '*': {
-            // width: 434,
-            // height: 290,
-            width: 651,
-            height: 435,
-            rename: {
-                suffix: "-resized"
-            },
-            withoutEnlargement: false
-        }
-    }, {
-        errorOnUnusedImage: false
-    })).pipe(gulp.dest('app/images/resized/miscGallery'))
+console.log("Run batchcrop.js and make sure no sideways/etc pictures")
+return
+    // return gulp.src('batchcrop.js').pipe($.util.log("Run batchcrop.js and make sure no sideways/etc pictures"))
+        // return gulp.src('app/images/miscGallery/*').pipe($.responsive({
+        //     '*': {
+        //         // width: 434,
+        //         // height: 290,
+        //         width: 651,
+        //         height: 435,
+        //         rename: {
+        //             suffix: "-resized"
+        //         },
+        //         withoutEnlargement: false
+        //     }
+        // }, {
+        //     errorOnUnusedImage: false
+        // })).pipe(gulp.dest('app/images/resized/miscGallery'))
 })
 
 gulp.task('resize', () => {
@@ -143,7 +146,7 @@ gulp.task('spellcheck', function() {
         .pipe($.spellcheck({
             "stdout": true,
             "mode": "html",
-            "ignore": ["Linganore", "Ballenger", "th","linganorelatin"]
+            "ignore": ["Linganore", "Ballenger", "th", "linganorelatin"]
         }))
         // .pipe($.util.log())
         .pipe($.prompt.confirm({
@@ -248,14 +251,14 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], (cb) => {
 });
 gulp.task('noCritical', (callback) => {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build',  'deploy', callback);
-    runSequence(['clean', 'spellcheck', 'lint'], 'docs', 'build', 'sitemap',callback);
+    runSequence(['clean', 'spellcheck', 'lint'], 'docs', 'build', 'sitemap', callback);
 });
 gulp.task('default', function(callback) {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical', 'deploy', callback);
     console.log("gulp deploy")
     console.log("eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
     console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html")
-    runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'sitemap','critical', callback);
+    runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'sitemap', 'critical', callback);
 });
 gulp.task('sitemap', function() {
     return gulp.src(['dist/index.html', 'dist/Docs/*'])
@@ -263,7 +266,7 @@ gulp.task('sitemap', function() {
             siteUrl: 'https://mdjcl.github.io',
             changefreq: "weekly",
             // pages: ["*"],
-            verbose:true
+            verbose: true
         }))
         .pipe(gulp.dest('./dist'));
 
