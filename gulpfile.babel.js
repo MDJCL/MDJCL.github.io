@@ -69,7 +69,7 @@ return
 gulp.task('resize', () => {
     return gulp.src('app/images/*').pipe($.responsive({
         //for documents, after remove all surrounding whitespace, run `montage null: Constit.png -tile 2x1 -geometry +3+0 out2.png` to add the right amount of whitespace so it doesn't go over edge
-        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg,MagistraKunzConvention_0353.jpg,MagistraKunzConvention_0005.jpg}': {
+        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg,MagistraKunzConvention_0353.jpg,MagistraKunzConvention_0005.jpg,Dulanium*.jpg}': {
             //for 4/12
             width: 430,
             height: 287,
@@ -78,7 +78,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png}': {
+        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png,MainDulanium.jpg}': {
             //for 8/12 sized
             width: 873,
             height: 580,
@@ -113,7 +113,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg,Minotaur404.jpg}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg,Minotaur404.jpg,LHHomeless.jpg}': {
             width: "100%",
             height: "100%",
             rename: {
@@ -146,11 +146,11 @@ gulp.task('spellcheck', function() {
         .pipe($.spellcheck({
             "stdout": true,
             "mode": "html",
-            "ignore": ["Linganore", "Ballenger", "th", "linganorelatin"]
+            "ignore": ["Linganore", "Ballenger", "th", "linganorelatin","Dulanium","Padonia","linganorelatin"]
         }))
         // .pipe($.util.log())
         .pipe($.prompt.confirm({
-            message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html',
+            message: 'Continue? If not aspell check -H /home/jonah/Dropbox/Public/MDJCL/app/index.html',
             default: true
         }))
         // .pipe(gulp.dest('app'));
@@ -256,8 +256,8 @@ gulp.task('noCritical', (callback) => {
 gulp.task('default', function(callback) {
     // runSequence(['clean', 'spellcheck'], 'docs', 'build', 'critical', 'deploy', callback);
     console.log("gulp deploy")
-    console.log("eslint /home/jonah/Dropbox/Public/MDJCL/yeoman/app/scripts/main.js ")
-    console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/yeoman/app/index.html")
+    console.log("eslint /home/jonah/Dropbox/Public/MDJCL/app/scripts/main.js ")
+    console.log("aspell check -H /home/jonah/Dropbox/Public/MDJCL/app/index.html")
     runSequence(['clean', 'spellcheck', "lint"], 'docs', 'build', 'sitemap', 'critical', callback);
 });
 gulp.task('sitemap', function() {
