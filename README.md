@@ -1,4 +1,4 @@
-# The Website for MDJCL - the center for latin in Maryland
+# The Website for MDJCL - the center for Latin in Maryland
 
 #To Push Build Onto Github User Pages
 If git is not already initialized:
