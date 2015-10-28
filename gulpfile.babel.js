@@ -78,7 +78,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png,MainDulanium.jpg}': {
+        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png,MainDulanium.jpg,exampleTSmall.jpg}': {
             //for 8/12 sized
             width: 873,
             height: 580,
@@ -113,7 +113,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg,Minotaur404.jpg,LHHomeless.jpg,olimPaper.jpg}': {
+        '{Registration.png,Constit.png,PurpleGold.jpg,Creed.jpg,coliseum.png,questionMarks.jpg,questionMarks.jpg,PastTorch*,moreComing.jpg,museum.jpg,spellingBee.jpg,certamen.jpg,Minotaur404.jpg,LHHomeless.jpg,olimPaper.jpg,exampleT.jpg}': {
             width: "100%",
             height: "100%",
             rename: {

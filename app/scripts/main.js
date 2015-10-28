@@ -4,7 +4,7 @@ $(document).ready(function() {
     oldGrid = "homeScreenGrid";
     // oldGrid = "documentGrid"
     oldElement = "";
-    allGrid = ["constitGrid", "FAQGrid", "calendarGrid", "photoGrid", "documentGrid", "officerGrid", "songCreedGrid", "contactGrid", "pastTorchGrid", "eastonGrid", "dulaneyGrid", "countryGrid", "loyolaGrid", "eleanorGrid", "certamenGrid", "spellingGrid", "museumGrid", "linganoreGrid"];
+    allGrid = ["constitGrid", "FAQGrid", "calendarGrid", "photoGrid", "documentGrid", "officerGrid", "songCreedGrid", "contactGrid", "pastTorchGrid", "eastonGrid", "dulaneyGrid", "countryGrid", "loyolaGrid", "eleanorGrid", "certamenGrid", "spellingGrid", "museumGrid", "linganoreGrid","tshirtsGrid"];
     //run below
     //     a=1;
     // for i in *.png; do
