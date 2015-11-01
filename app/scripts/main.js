@@ -179,6 +179,11 @@ function changeGrid(newGrid) {
         oldGrid = newGrid;
     }
     document.location.hash = newGrid.replace("Grid", "");
+    ga('set', {
+              page: '/'+newGrid.replace("Grid",""),
+              title: newGrid.replace("Grid","")
+    });
+    ga('send', 'pageview');
 }
 
 function onHashChange(isStart) {
