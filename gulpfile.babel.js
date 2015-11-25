@@ -69,7 +69,7 @@ return
 gulp.task('resize', () => {
     return gulp.src('app/images/*').pipe($.responsive({
         //for documents, after remove all surrounding whitespace, run `montage null: Constit.png -tile 2x1 -geometry +3+0 out2.png` to add the right amount of whitespace so it doesn't go over edge
-        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg,MagistraKunzConvention_0353.jpg,MagistraKunzConvention_0005.jpg,Dulanium*.jpg}': {
+        '{Laurel.jpg,Watch.jpg,Help.jpg,Nervs.jpg,NationalConvention0021.jpg,NationalConvention0007.jpg,dropboxLogo.jpg,twitterLogo.png,instagramLogo.jpg,facebookLogo.png,envelopeLogo.jpg,MagistraKunzConvention_0005.jpg,Dulanium*.jpg,EleanorCertamen1.jpg}': {
             //for 4/12
             width: 430,
             height: 287,
@@ -78,7 +78,7 @@ gulp.task('resize', () => {
             },
             withoutEnlargement: false
         },
-        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png,MainDulanium.jpg}': {
+        '{NJCL_smaller.jpg,Exercise.jpg,Stand.jpg,peepcontest2.png,NationalConvention0004.jpg,ContactUs.png,MainDulanium.jpg,EleanorCertamen2.jpg,MagistraKunzConvention_0353.jpg}': {
             //for 8/12 sized
             width: 873,
             height: 580,

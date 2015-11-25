@@ -56,7 +56,7 @@ allImages = ["EllieKilmonNationalConvention__0000-resized.jpg","EllieKilmonNatio
     startingNumber = 0;
     $(window).scroll(function() {
         if (oldGrid === "photoGrid" && $(window).scrollTop() >= $(document).height() - $(window).height() - 400) {
-            console.log('end of page');
+            // console.log('end of page');
             append();
         }
     });
@@ -73,7 +73,7 @@ function append() {
         document.getElementById("appendBtn").disabled = true;
         return;
     }
-    console.log("appending");
+    // console.log("appending");
     html = '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
     startingNumber += 3;
     html += '<div class="row no-gutter"><div class="col-md-4 first"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/' + allImages.slice(startingNumber, startingNumber + 3).join('" src="images/resized/NJCL_smaller-resized.jpg"></div></div><div class="col-md-4"><div class="img-overlay"><img class="img-responsive lazyload" data-src="images/resized/miscGallery/') + '" src="images/resized/NJCL_smaller-resized.jpg"></div></div></div>';
@@ -180,7 +180,7 @@ function changeGrid(newGrid) {
     }
     document.location.hash = newGrid.replace("Grid", "");
     ga('set', {
-              page: '/'+newGrid.replace("Grid",""),
+              page: '/' + newGrid.replace("Grid" , ""),
               title: newGrid.replace("Grid","")
     });
     ga('send', 'pageview');
