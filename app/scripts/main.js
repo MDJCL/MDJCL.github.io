@@ -5,6 +5,11 @@ $(document).ready(function() {
     // oldGrid = "documentGrid"
     oldElement = "";
     allGrid = ["constitGrid", "FAQGrid", "calendarGrid", "photoGrid", "documentGrid", "officerGrid", "songCreedGrid", "contactGrid", "pastTorchGrid", "eastonGrid", "dulaneyGrid", "countryGrid", "loyolaGrid", "eleanorGrid", "certamenGrid", "spellingGrid", "museumGrid", "linganoreGrid","tshirtsGrid","fallTorchGrid"];
+    startingNumber = 0;
+    setTimeout(function() {
+        onHashChange("start");
+    }, 500);
+    window.onhashchange = onHashChange;
     //run below
     //     a=1;
     // for i in *.png; do
@@ -37,6 +42,13 @@ allImages = ["EllieKilmonNationalConvention__0000-resized.jpg","EllieKilmonNatio
 
     // cd /home/jonah/Dropbox/Public/MDJCL/app/images/resized/miscGallery; echo '["'`ls| tr "\n" "@"|sed 's/@/","/g'|sed 's/","$//g'`'"]'|copy
     shuffle(allImages);
+    $(window).scroll(function() {
+        if (oldGrid === "photoGrid" && $(window).scrollTop() >= $(document).height() - $(window).height() - 400) {
+            // console.log('end of page');
+            append();
+        }
+    });
+    append();
     // var myLeading = moltenLeading(".header-top-left", {
     //     minline: 1.9, // Integer: Minimum line-height for the element (multiplied by the element's font-size)
     //     maxline: 2.5, // Integer: Maximum line-height for the element (multiplied by the element's font-size)
@@ -45,6 +57,8 @@ allImages = ["EllieKilmonNationalConvention__0000-resized.jpg","EllieKilmonNatio
     //     units: "px" // String: CSS units used for the min & max widths, can be "px", "em" or "rem"
     // });
     //
+    // ENABLE CAPTIONIFY TO TURN ALT-TEXT TO CAPTIONS
+// captionify()
     $("img.lazyload").unveil(500);
 
     // $("img.lazyload").unveil(1000, function() {
@@ -52,19 +66,6 @@ allImages = ["EllieKilmonNationalConvention__0000-resized.jpg","EllieKilmonNatio
     //     //     $(this).hide().fadeIn("slow");
     //     // });
     // });
-    var toAdd = "<div class='row no-gutter'>" + $("#test").html() + "</div>";
-    startingNumber = 0;
-    $(window).scroll(function() {
-        if (oldGrid === "photoGrid" && $(window).scrollTop() >= $(document).height() - $(window).height() - 400) {
-            // console.log('end of page');
-            append();
-        }
-    });
-    append();
-    setTimeout(function() {
-        onHashChange("start");
-    }, 500);
-    window.onhashchange = onHashChange;
 });
 
 function append() {
@@ -144,10 +145,10 @@ function debounce(func, wait, immediate) {
 
 onClickMenu = debounce(function(e) {
     //so if double click, won't go back and forth. Only runs every 500ms
-    console.log(this);
+    // console.log(this);
     e.preventDefault();
     if (oldElement === this) {
-        console.log("same elemetn 2x");
+        // console.log("same elemetn 2x");
         toHomeScreen();
         oldElement = "";
     } else {
@@ -213,6 +214,6 @@ function onHashChange(isStart) {
             }
         }
     } else {
-        console.log("either blank changeGrid or invalid");
+        // console.log("either blank changeGrid or invalid");
     }
 }
