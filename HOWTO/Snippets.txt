@@ -1,0 +1,83 @@
+BASIC STRUCTURE
+       
+<div id="FAQGrid" style="display:none">
+    <div class="container-fluid no-gutter gridContainer" style="background:white">
+
+        <!-- new row -->
+        <div class="row no-gutter">
+            <!-- new column. Notice the number on the next line, that's how wide out of 12 (6/12 = 0.5 width) -->
+            <div class="col-md-6 first">
+                <a href="#" data-featherlight="<p>OVERLAY HERE</p>">
+                    <div class="img-overlay">
+                        <img class="img-responsive lazyload" data-src="images/resized/IMAGEHERE-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="btn" data-featherlight="<p>Image from COPYRIGHT HERE(<a href='COPYRIGHT URL'>COPYRIGHT URL</a> </p> ">?</div>
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">
+                           TITLE HERE
+                        </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- note how this isn't the left mode column so doesn't have 'first' -->
+            <div class="col-md-6 ">
+                <a href="#" data-featherlight="<p>OVERLAY HERE</p>">
+                    <div class="img-overlay">
+                        <img class="img-responsive lazyload" data-src="images/resized/IMAGEHERE-resized.jpg" alt="Fun with MDJCL" src="images/resized/NJCL_smaller-resized.jpg">
+                        <div class="btn" data-featherlight="<p>Image from COPYRIGHT HERE(<a href='COPYRIGHT URL'>COPYRIGHT URL</a> </p> ">?</div>
+                        <div class="project-overlay">
+                            <h1 class="header-top-left">
+                           TITLE HERE
+                        </h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+o               </div>
+
+
+            <!-- repeat from between here and 'new row' ad nauseum -->
+    </div>
+</div>
+
+
+CALENDAR TEMPLATE
+
+<div class="row no-gutter">
+    <div class="first col-md-8">
+        <div class="img-overlay">
+            <img class="img-responsive lazyload" data-src="images/resized/IMAGEHERE-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg" alt="Fun with MDJCL">
+            <div class="project-overlay">
+                <!--                                    Link to place goes here, on directions ahref and google maps static image -->
+                <h1 class="header-top-left">FIRST LINE HERE<br>2nd LINE<br>3rd Line<br><a href="https://maps.google.com?daddr=ADDRESS HERE(type into google maps and copy only the address part into google i.e https://maps.google.com?daddr=716+Goldsborough+St,+Easton,+MD+21601)">Address Here</a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <a href="https://maps.google.com?daddr=SAME ADDREsS URL HERE">
+                <div class="img-overlay">
+                    <img class="img-responsive lazyload noscriptImg" alt="Map of MDJCL Event" data-src="https://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=2&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http%3A%2F%2Fmdjcl.github.io%2Fimages%2Fresized%2FMDJCLPin-resized.png%7Cshadow:false%7CADDRESS HERE(KEEP 'C' before ADDRESS)"
+                    src="images/resized/NJCL_smaller-resized.jpg">
+                    <noscript>
+                        <img class="img-responsive lazyload" src="https://maps.googleapis.com/maps/api/staticmap?center=&amp;zoom=2&amp;scale=false&amp;size=426x284&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=icon:http%3A%2F%2Fmdjcl.github.io%2Fimages%2Fresized%2FMDJCLPin-resized.png%7Cshadow:false%7CADDRESS"
+                        alt="Fun with MDJCL">
+                    </noscript>
+                    <div class="project-overlay">
+                        <h1 class="header-top-left">Directions</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <a href="#" data-featherlight="<div>LINK TEXT HERE</div>">
+                <div class="img-overlay">
+                    <img class="img-responsive lazyload" alt="Fun with MDJCL" data-src="images/resized/IMAGE HERE-resized.jpg" src="images/resized/NJCL_smaller-resized.jpg">
+                    <div class="project-overlay">
+                        <h1 class="header-top-left">About The Event</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

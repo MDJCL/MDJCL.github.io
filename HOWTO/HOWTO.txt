@@ -1,0 +1,89 @@
+EMAIL: JonahLanglieb@gmail.com
+MDJCL EMAIL: webmaster.mdjcl@gmail.com
+PASSWORD (for everything I've seen): Latinstudent
+	for github: Latinstudent123
+
+Needed Programs
+	git
+		https://git-scm.com/downloads
+		The GUI (graphical user interface) would be easier but I don't have much experience with it. I include the needed terminal commands but this can also be done with the GUI
+	nodejs (and npmjs which is included)
+		https://nodejs.org/en/
+	a good text editor (anything will work even microsoft notepad but it'll be much harder. Do NOT use microsoft word)
+		I reccomend sublime text (however, it will popup a little box every few saves if you want to voluntarily pay. You never have to)
+			https://www.sublimetext.com/3
+	A BASH terminal
+		On linux and Mac OS this is included. In windows it is not. I have heard good things about cygwin (https://www.cygwin.com/) but have no experience with it. Please contact me if you need help with this
+
+
+
+If I have `this` that means type this in the terminal don't actually type the "`" character
+
+*To Start*
+
+	Installing the various dependencies
+		gulp
+			`sudo npm install -g gulp-cli`
+			it is going to ask you for a password this is because it is becoming global. This allows you to run the `gulp` command from anywhere in the terminal which will be useful later. If you don't want to (or cannot) remove the "sudo" and "-g" and see if that works. However, to run any `gulp` commands if you do that, be in the main mdjcl folder and run `./gulp` not `gulp`
+		bower
+			`sudo npm install -g bower`
+			same as above, will ask for password, if not need to likewise prefix with "./"
+		Run
+			`npm install`
+			`bower install`
+
+*To Edit Website and View Results*
+	run `gulp serve`
+		all these lines should go down, there should be no errors and, at the end, the lines should stop moving and there would be lines with the ip addresses
+
+		Look for "localhost:9000", once that happens, go to any web browser and type that in.
+
+	I reccommend opening the developer tools (in chrome: control shift J or go to the side menu -> tools-> web console)
+		On the top panel, go to "console", if there are any errors
+
+*To Upload a Finished Revision To mdjcl.org*
+	 Make sure there are no errors in the web console (see above)
+	 type in `gulp` and lines should scroll by (it'll take a while)
+	 	in the beginning it does a lot of sanity checks (for HTML, spelling, javascript, etc). If there is no red colors and/or the program stops running, it will still stop after the last check. Type in "y" when it asks (or press enter) and it will continue
+
+	 IF there is an error for spellcheck and it's a correct word
+	 	access the "gulpfile.babel.js" file and search for "$.spellcheck" then go down 3 lines t "ignore:" and add before "]" ,"WORD HERE"
+
+   To deploy
+      go to "https://github.com/MDJCL/MDJCL.github.io" and at the bottom is the command you need
+         `cd ~/Dropbox/PATH HERE/dist;git init;git remote add origin https://github.com/MDJCL/MDJCL.github.io.git;git add *;git commit -m "`date`";git push -f -u origin master`
+
+
+
+*Day to Day Modifications*
+See snippets.txt for basic adding html (also, the easiest way I've found is to simply copy a row already on the website and edit what you want)
+
+    To add images
+      REMOVE ALL SPACES FROM THE IMAGE NAME (underscores work fine)
+      Want the file extension to be .jpg or .png NOT .jpeg, .JPG
+           experimental
+              if you have a lot of images and don't want to do it by hand, in the terminal run `for f in *.png; do echo mv "$f" "${f/_*_/_}"; done` and see if the lines in the console look right (should be "mv OLDFILENAME NEWFILENAME" where NEWFILENAME is the previous filename without spaces), if it is, remove "echo" from the command. MAKE SURE YOU HAVE BACKUPS FOR THE IMAGES IF YOU RUN THIS
+      place the images in the /app/images/
+
+       go to the gulpfile.js
+          search for "resize images here"
+          add the image to the right width/height array(easiest way is to look for the image name of an image in the same place you want in the row and then search for that filename in this file)
+          run `gulp resize`
+              this can get really tedious if you're just trying to get one image to look right so, if you run gulp `resize --IMAGENAMEHERE.jpg`, it will only resize that image so should be fast
+
+
+
+     if, when you view it in the web browser, it looks wrong, resize the image in the /app/images directory to be the right size from the start (any image editing software will work, it just needs to be the same proportions/aspect ratio, I reccomend pixlr.com editor: click the crop icon (upper left), put in the width and height from the gulpfile and choose "aspect ratio" for the constraint, then crop to what you want)
+
+     To add photo gallery images
+        Not many people view it so I wouldn't worry but you can drop lots of photos into the photogallery and it provides an infinite scrolling page of photos
+        Add the photos you want to add to the /app/images/miscGallery folder
+            run `gulp resizeGallery`
+
+        run these commands:
+            `cd app/images/resized/miscGallery`
+            echo '["'`ls| tr "\n" "@"|sed 's/@/","/g'|sed 's/","$//g'`'"]'
+                 should return an array of the filenames
+            go to app/scripts/main.ks
+               replace that's after "allImages" with this (should look similar)
+                       make sure the photos part of the page still works
