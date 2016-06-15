@@ -17,9 +17,10 @@ src: url(https://dl.dropboxusercontent.com/u/24397004/MDJCL/initializr/fonts/Sif
 
 }*/
 
-@font-face {
-    font-family: 'testt';
-    src: url(../fonts/SIFONN_BASIC.otf) format("opentype");
+/* @font-face { */
+/*     font-family: 'testt'; */
+/*     src: url(../fonts/SIFONN_BASIC.otf) format("opentype"); */
+/*     BELOW IS ALTERNATIVE FONTS */
     /*src: url(../fonts/Sifonn_Basic/SIFONN_BASIC_OUTLINE.otf) format("opentype");*/
     /*src: url(../fonts/Poetica.ttf) format("truetype");*/
     /*src: url(../fonts/geomanist_regular/01.Geomanist_Regular_Opentype/Geomanist-Regular.otf)*/
@@ -33,7 +34,7 @@ src: url(https://dl.dropboxusercontent.com/u/24397004/MDJCL/initializr/fonts/Sif
        url('../fonts/webfont/WebFont.ttf') format('truetype'),
        url('../fonts/webfont/WebFont.svg#webfont') format('svg');
 */
-}
+/* } */
 @font-face {
     font-family: 'Oswald';
     font-style: normal;
@@ -83,7 +84,7 @@ src: url(https://dl.dropboxusercontent.com/u/24397004/MDJCL/initializr/fonts/Sif
     margin-bottom: 5px;
 }
 #hello {
-    font-family: "testt", sans-serif;
+    /* font-family: "testt", sans-serif; */
     padding-left: 0;
     /*padding-right:186px;*/
     padding-right: 0px;
@@ -355,4 +356,10 @@ a:hover>.img-overlay>.project-overlay>.header-top-left {
 /* } */
 .waiting{
         cursor:wait !important;
+}
+.imgFigure{
+        display:block;
+}
+.featherlight-content { 
+word-break: break-word; 
 }
