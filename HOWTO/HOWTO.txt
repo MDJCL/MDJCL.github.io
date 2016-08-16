@@ -3,6 +3,19 @@ MDJCL EMAIL: webmaster.mdjcl@gmail.com
 PASSWORD (for everything I've seen): Latinstudent
 	for github: Latinstudent123
 
+
+Installing on Mac 
+
+Install:
+xcode-select --install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install node
+npm install -g gulp
+then cd into the MDJL directory
+npm install
+
+
+
 Needed Programs
 	git
 		https://git-scm.com/downloads
