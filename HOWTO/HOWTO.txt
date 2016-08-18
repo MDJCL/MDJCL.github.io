@@ -9,6 +9,8 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install node
 npm install -g gulp
+brew tap homebrew/science
+brew install vips
 then cd into the MDJL directory
 npm install
 
