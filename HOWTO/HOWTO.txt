@@ -1,7 +1,5 @@
 EMAIL: JonahLanglieb@gmail.com
 MDJCL EMAIL: webmaster.mdjcl@gmail.com
-PASSWORD (for everything I've seen): Latinstudent
-	for github: Latinstudent123
 
 
 Installing on Mac 
